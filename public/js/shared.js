@@ -199,7 +199,7 @@
     // signed in (which spams the console if /ws is protected).
     if (!document.cookie || document.cookie.indexOf('makit_session=') === -1) {
       console.debug('No session cookie found — skipping realtime connection.');
-      return () => {};
+      return () => { };
     }
 
     function connect() {
