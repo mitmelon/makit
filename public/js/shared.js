@@ -9,9 +9,6 @@
       redirect: 'manual',
     });
 
-    // If server issued a redirect (e.g. when an authenticated page redirects
-    // away from /login or /register), follow it in the browser rather than
-    // treating it as an API error.
     if (res.status >= 300 && res.status < 400) {
       const loc = res.headers.get('Location');
       if (loc) {
@@ -103,7 +100,7 @@
     document.querySelectorAll('[data-lang-select]').forEach((sel) => {
       try {
         sel.value = currentLanguage || 'en';
-      } catch (e) {}
+      } catch (e) { }
       sel.addEventListener('change', (e) => {
         setLanguage(e.target.value).catch((err) => console.error(err));
       });
@@ -225,10 +222,6 @@
     return () => socket && socket.close();
   }
 
-  // If this page is an auth page (login/register), proactively check session
-  // and redirect an already-authenticated user to the dashboard. This helps
-  // when server-side redirects are blocked or when client fetched pages are
-  // rendered without a full navigation.
   if (['/login', '/register'].includes(window.location.pathname)) {
     (async () => {
       try {
