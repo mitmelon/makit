@@ -191,6 +191,16 @@
   function connectRealtime(onEvent) {
     let socket = null;
     let attempt = 0;
+    let failCount = 0;
+    const maxFail = 6;
+
+    // Only attempt to open a WS when a session cookie is present. This avoids
+    // continual reconnect attempts from public pages or when the user isn't
+    // signed in (which spams the console if /ws is protected).
+    if (!document.cookie || document.cookie.indexOf('makit_session=') === -1) {
+      console.debug('No session cookie found — skipping realtime connection.');
+      return () => {};
+    }
 
     function connect() {
       try {
@@ -211,9 +221,15 @@
         } catch { }
       });
       socket.addEventListener('close', () => {
+        failCount += 1;
         attempt += 1;
-        console.debug('Realtime socket closed, retrying in', Math.min(1000 * attempt, 10000));
-        setTimeout(connect, Math.min(1000 * attempt, 10000));
+        if (failCount >= maxFail) {
+          console.debug('Realtime socket failed too many times — stopping retries.');
+          return;
+        }
+        const delay = Math.min(1000 * attempt, 10000);
+        console.debug('Realtime socket closed, retrying in', delay, `(attempt ${attempt})`);
+        setTimeout(connect, delay);
       });
       socket.addEventListener('error', () => socket.close());
     }
