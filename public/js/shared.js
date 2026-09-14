@@ -84,11 +84,20 @@
 
   function applyI18n() {
     document.querySelectorAll('[data-i18n]').forEach((el) => {
-      el.textContent = t(el.getAttribute('data-i18n'));
+      const key = el.getAttribute('data-i18n');
+      const has = hasTranslation(key);
+      if (has) el.textContent = t(key);
     });
     document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
-      el.placeholder = t(el.getAttribute('data-i18n-placeholder'));
+      const key = el.getAttribute('data-i18n-placeholder');
+      const has = hasTranslation(key);
+      if (has) el.placeholder = t(key);
     });
+  }
+
+  function hasTranslation(key) {
+    if (!stringsCache) return false;
+    return Boolean((stringsCache[currentLanguage] && stringsCache[currentLanguage][key]) || (stringsCache.en && stringsCache.en[key]));
   }
 
   async function setLanguage(code) {
@@ -274,5 +283,5 @@
     document.removeEventListener('keydown', escHandler);
   }
 
-  global.Makit = { api, renderLayout, escapeHtml, connectRealtime, openModal, closeModal, t, loadLocale, applyI18n, bindLanguageSelects };
+  global.Makit = { api, renderLayout, escapeHtml, connectRealtime, openModal, closeModal, t, loadLocale, applyI18n, bindLanguageSelects, hasTranslation };
 })(window);
