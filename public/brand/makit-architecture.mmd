@@ -1,0 +1,22 @@
+flowchart LR
+    subgraph Signals["🌍 What it reads"]
+        A[💱 Market prices]
+        B["📰 Social & news feeds"]
+        C[🧾 Your own sales data]
+        D[🏪 Competitors]
+    end
+
+    Signals --> R["🔎 Researcher Agent"]
+    R -- "web search" --> PA[("🌐 Parallel API")]
+    R --> Crit["🧐 Critic Agent<br/>(finds the holes)"]
+    Crit --> O["🧭 Orchestrator Agent"]
+    O -- "reasoning" --> MP[("🤖 Amazon Bedrock<br/>(or OpenAI / Anthropic / Gemini)")]
+    O --> Digest["📋 Daily Digest"]
+    O --> Scout["🕵️ Scout Agent"]
+    Scout -- "web search" --> PA
+    Scout --> Feeds["📡 Feeds"]
+    Scout --> Comp["⚔️ Competitors"]
+    Scout --> Opp["💡 Opportunities"]
+    Digest --> Dash["📊 Dashboard"]
+    Digest --> Email["✉️ Email"]
+    Digest --> Chat["💬 Telegram / your own MCP"]

@@ -19,6 +19,19 @@ const tasksRoutes = require('./routes/tasks');
 const mcpRoutes = require('./routes/mcp');
 const webhookRoutes = require('./routes/webhook');
 
+function redirectIfAuthenticated(req, res, next) {
+  const token = req.cookies?.[config.auth.cookieName];
+  if (!token) return next();
+
+  try {
+    const { verifyToken } = require('./lib/auth');
+    verifyToken(token);
+    return res.redirect('/dashboard');
+  } catch {
+    return next();
+  }
+}
+
 async function main() {
   await getStore(); // fail fast if the configured DB driver can't connect
 
@@ -72,8 +85,8 @@ async function main() {
 
   // Pages
   app.get('/', (req, res) => res.render('landing'));
-  app.get('/login', (req, res) => res.render('login'));
-  app.get('/register', (req, res) => res.render('register'));
+  app.get('/login', redirectIfAuthenticated, (req, res) => res.render('login'));
+  app.get('/register', redirectIfAuthenticated, (req, res) => res.render('register'));
   app.get('/dashboard', requireAuthPage, (req, res) => res.render('dashboard'));
   app.get('/tasks/new', requireAuthPage, (req, res) => res.render('task-new'));
   app.get('/tasks/:id', requireAuthPage, (req, res) => res.render('task-detail'));
