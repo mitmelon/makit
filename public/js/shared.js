@@ -185,8 +185,13 @@
     let attempt = 0;
 
     function connect() {
-      const protocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-      socket = new WebSocket(`${protocol}//${location.host}/ws`);
+      try {
+        const wsUrl = new URL('/ws', location.origin).toString();
+        socket = new WebSocket(wsUrl);
+      } catch (ex) {
+        const protocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+        socket = new WebSocket(`${protocol}//${location.host}/ws`);
+      }
 
       socket.addEventListener('open', () => {
         attempt = 0;
@@ -199,6 +204,7 @@
       });
       socket.addEventListener('close', () => {
         attempt += 1;
+        console.debug('Realtime socket closed, retrying in', Math.min(1000 * attempt, 10000));
         setTimeout(connect, Math.min(1000 * attempt, 10000));
       });
       socket.addEventListener('error', () => socket.close());
@@ -206,6 +212,23 @@
 
     connect();
     return () => socket && socket.close();
+  }
+
+  // If this page is an auth page (login/register), proactively check session
+  // and redirect an already-authenticated user to the dashboard. This helps
+  // when server-side redirects are blocked or when client fetched pages are
+  // rendered without a full navigation.
+  if (['/login', '/register'].includes(window.location.pathname)) {
+    (async () => {
+      try {
+        const user = await loadLocale();
+        if (user) {
+          window.location.href = '/dashboard';
+        }
+      } catch (e) {
+        // ignore — user is not authenticated
+      }
+    })();
   }
 
   function openModal(innerHtml) {
