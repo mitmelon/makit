@@ -6,7 +6,31 @@
       ...options,
       headers: { 'Content-Type': 'application/json', ...(options.headers || {}) },
       body: options.body ? JSON.stringify(options.body) : undefined,
+      redirect: 'manual',
     });
+
+    // If server issued a redirect (e.g. when an authenticated page redirects
+    // away from /login or /register), follow it in the browser rather than
+    // treating it as an API error.
+    if (res.status >= 300 && res.status < 400) {
+      const loc = res.headers.get('Location');
+      if (loc) {
+        // support relative and absolute redirects
+        window.location.href = loc;
+        return {};
+      }
+    }
+
+    // If the API explicitly returns 401, send the user to the login page.
+    if (res.status === 401) {
+      try {
+        window.location.href = routeHref('login') || '/login';
+      } catch (e) {
+        window.location.href = '/login';
+      }
+      return {};
+    }
+
     const data = await res.json().catch(() => ({}));
     if (!res.ok) throw new Error(data.error || `Request failed (${res.status})`);
     return data;
