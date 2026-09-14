@@ -99,6 +99,17 @@
     location.reload();
   }
 
+  function bindLanguageSelects() {
+    document.querySelectorAll('[data-lang-select]').forEach((sel) => {
+      try {
+        sel.value = currentLanguage || 'en';
+      } catch (e) {}
+      sel.addEventListener('change', (e) => {
+        setLanguage(e.target.value).catch((err) => console.error(err));
+      });
+    });
+  }
+
 
   async function renderLayout(active, { title = '', subtitle = '', titleKey = null, subtitleKey = null } = {}) {
     const sidebar = document.getElementById('sidebar');
@@ -254,5 +265,5 @@
     document.removeEventListener('keydown', escHandler);
   }
 
-  global.Makit = { api, renderLayout, escapeHtml, connectRealtime, openModal, closeModal, t, loadLocale, applyI18n };
+  global.Makit = { api, renderLayout, escapeHtml, connectRealtime, openModal, closeModal, t, loadLocale, applyI18n, bindLanguageSelects };
 })(window);
