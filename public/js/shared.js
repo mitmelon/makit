@@ -203,47 +203,56 @@
     let failCount = 0;
     const maxFail = 6;
 
-    // Only attempt to open a WS when a session cookie is present. This avoids
-    // continual reconnect attempts from public pages or when the user isn't
-    // signed in (which spams the console if /ws is protected).
-    if (!document.cookie || document.cookie.indexOf('makit_session=') === -1) {
-      console.debug('No session cookie found — skipping realtime connection.');
-      return () => { };
-    }
-
-    function connect() {
+    // Previously we checked document.cookie for makit_session, but session
+    // cookies are HttpOnly and not visible to JS. Instead, confirm the user
+    // is authenticated by calling `loadLocale()` which returns the session.
+    (async () => {
       try {
-        const wsUrl = new URL('/ws', location.origin).toString();
-        socket = new WebSocket(wsUrl);
-      } catch (ex) {
-        const protocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-        socket = new WebSocket(`${protocol}//${location.host}/ws`);
-      }
-
-      socket.addEventListener('open', () => {
-        attempt = 0;
-      });
-      socket.addEventListener('message', (e) => {
-        try {
-          const { event, payload } = JSON.parse(e.data);
-          onEvent(event, payload);
-        } catch { }
-      });
-      socket.addEventListener('close', () => {
-        failCount += 1;
-        attempt += 1;
-        if (failCount >= maxFail) {
-          console.debug('Realtime socket failed too many times — stopping retries.');
+        const user = await loadLocale();
+        if (!user) {
+          console.debug('No authenticated user — skipping realtime connection.');
           return;
         }
-        const delay = Math.min(1000 * attempt, 10000);
-        console.debug('Realtime socket closed, retrying in', delay, `(attempt ${attempt})`);
-        setTimeout(connect, delay);
-      });
-      socket.addEventListener('error', () => socket.close());
-    }
+      } catch (e) {
+        console.debug('Failed to check session, skipping realtime connection.');
+        return;
+      }
 
-    connect();
+      function connect() {
+        try {
+          const wsUrl = new URL('/ws', location.origin).toString();
+          socket = new WebSocket(wsUrl);
+        } catch (ex) {
+          const protocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+          socket = new WebSocket(`${protocol}//${location.host}/ws`);
+        }
+
+        socket.addEventListener('open', () => {
+          attempt = 0;
+        });
+        socket.addEventListener('message', (e) => {
+          try {
+            const { event, payload } = JSON.parse(e.data);
+            onEvent(event, payload);
+          } catch { }
+        });
+        socket.addEventListener('close', () => {
+          failCount += 1;
+          attempt += 1;
+          if (failCount >= maxFail) {
+            console.debug('Realtime socket failed too many times — stopping retries.');
+            return;
+          }
+          const delay = Math.min(1000 * attempt, 10000);
+          console.debug('Realtime socket closed, retrying in', delay, `(attempt ${attempt})`);
+          setTimeout(connect, delay);
+        });
+        socket.addEventListener('error', () => socket.close());
+      }
+
+      connect();
+    })();
+
     return () => socket && socket.close();
   }
 

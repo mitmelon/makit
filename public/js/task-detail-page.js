@@ -74,6 +74,14 @@ function renderTrend(runs) {
         return;
     }
 
+    function normalizeTs(v) {
+        const n = Number(v || 0);
+        if (!Number.isFinite(n)) return 0;
+        // if timestamp looks like seconds (10 digits) convert to ms
+        if (n < 1e12) return n * 1000;
+        return n;
+    }
+
     const scores = ordered.map((r) => {
         const base = Number(r.digest?.confidence ?? (r.status === 'completed' ? 0.7 : 0.15));
         return Math.max(0, Math.min(1, Number.isFinite(base) ? base : 0.15));
@@ -87,14 +95,14 @@ function renderTrend(runs) {
         const safeScore = Math.max(0, Math.min(1, Number.isFinite(score) ? score : 0.15));
         const percent = Math.round(safeScore * 100);
         const height = Math.max(16, Math.round((safeScore / maxScore) * 100));
-        const label = new Date(r.createdAt).toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
+        const label = new Date(normalizeTs(r.createdAt)).toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
         const status = r.digest?.status || r.status || 'rest';
         const color = marketStatusColor(status);
         return `
           <div class="group relative flex h-full flex-1 min-w-0 flex-col items-center justify-end overflow-hidden">
             <span class="mb-1 text-[10px] font-medium text-ink-soft">${percent}%</span>
             <div class="relative flex h-full w-full items-end justify-center">
-              <div class="w-full max-w-[44px] rounded-t-[8px] shadow-sm transition-all duration-200 border border-black/5 overflow-hidden" style="height:${height}%; background: linear-gradient(180deg, ${color} 0%, ${color}dd 100%);" title="${new Date(r.createdAt).toLocaleString()} · ${status} · ${percent}%"></div>
+              <div class="w-full max-w-[44px] rounded-t-[8px] shadow-sm transition-all duration-200 border border-black/5 overflow-hidden" style="height:${height}%; background: linear-gradient(180deg, ${color} 0%, ${color}dd 100%);" title="${new Date(normalizeTs(r.createdAt)).toLocaleString()} · ${status} · ${percent}%"></div>
             </div>
             <span class="mt-1 text-[10px] text-ink-faint">${label}</span>
           </div>
@@ -395,7 +403,7 @@ async function loadTaskPage() {
     document.getElementById('pause-btn').textContent = t.status === 'paused' ? Makit.t('resume') : Makit.t('pause');
 
     const { runs } = await Makit.api(`/api/tasks/${taskId}/runs`);
-    const orderedRuns = [...runs].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+    const orderedRuns = [...runs].sort((a, b) => normalizeTs(b.createdAt) - normalizeTs(a.createdAt));
     const latestCompleted = orderedRuns.find((r) => r.status === 'completed') || orderedRuns[0];
 
     renderTrend(orderedRuns);
