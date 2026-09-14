@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <meta name="theme-color" content="#635BFF" />
+  <title data-i18n="landing_title">Makit — Know when your customers can afford to buy</title>
+  <meta name="description" content="A background intelligence agent that watches your local market every day and tells you, in plain language, when to sell, when to hold, and why." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body class="bg-surface" data-page="landing">
+
+  <%- include('partials/public-header') %>
+
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-mesh-1 pointer-events-none"></div>
+    <div class="relative mx-auto max-w-5xl px-6 pt-24 pb-20 text-center">
+      <div class="inline-flex items-center gap-2 rounded-full border border-line bg-surface-sunken px-4 py-1.5 text-[13px] font-medium text-ink-soft mb-8">
+        <span class="dot bg-accent"></span>
+        <span data-i18n="public_hero_badge">Now watching markets across Nigeria, Kenya, and Ghana</span>
+      </div>
+      <h1 class="text-display-lg text-ink mb-6">
+        <span data-i18n="public_hero_title">Know when your</span><br class="hidden sm:block" />
+        <span class="text-gradient" data-i18n="public_hero_highlight">customers can afford to buy.</span>
+      </h1>
+      <p class="text-[19px] text-ink-soft leading-relaxed max-w-2xl mx-auto mb-10" data-i18n="public_hero_desc">
+        Makit is a background intelligence agent for small businesses. Every day it reads the economy, local events, and your own sales data — then tells you plainly whether today's a good day to sell, and what to do about it.
+      </p>
+      <div class="flex items-center justify-center gap-4">
+        <a href="register" class="btn-accent" data-i18n="public_cta_primary">Start free — no card required</a>
+        <a href="#how" class="btn-secondary" data-i18n="public_cta_secondary">See how it works</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-y border-line bg-surface-sunken">
+    <div class="mx-auto max-w-6xl px-6 py-14 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div>
+        <p class="stat-value text-ink">15+</p>
+        <p class="text-[13px] text-ink-soft mt-2" data-i18n="public_stat_1_label">local market signals tracked per read</p>
+      </div>
+      <div>
+        <p class="stat-value text-ink">24/7</p>
+        <p class="text-[13px] text-ink-soft mt-2" data-i18n="public_stat_2_label">background monitoring, no dashboard required</p>
+      </div>
+      <div>
+        <p class="stat-value text-ink">3</p>
+        <p class="text-[13px] text-ink-soft mt-2" data-i18n="public_stat_3_label">agents cross-checking every digest</p>
+      </div>
+      <div>
+        <p class="stat-value text-ink">1 min</p>
+        <p class="text-[13px] text-ink-soft mt-2" data-i18n="public_stat_4_label">to read your daily brief</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-6 py-20">
+    <div class="max-w-2xl mb-10">
+      <h2 class="text-display-sm text-ink mb-4" data-i18n="public_watch_title">Watch intelligence move.</h2>
+      <p class="text-[17px] text-ink-soft leading-relaxed" data-i18n="public_watch_desc">Signals flow in from everywhere that matters. Makit reads them continuously and turns them into one clear answer.</p>
+    </div>
+
+    <div class="bento p-6 md:p-10 overflow-hidden">
+      <svg viewBox="0 0 900 340" class="w-full h-auto" role="img" aria-label="Animated diagram showing data flowing from market sources into Makit, out as a daily digest">
+        <defs>
+          <linearGradient id="flow-line-grad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#635BFF" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="#635BFF" stop-opacity="0.08"/>
+          </linearGradient>
+          <linearGradient id="flow-out-grad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.08"/>
+            <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.35"/>
+          </linearGradient>
+        </defs>
+
+        <path id="flow-path-1" d="M110,50 C280,50 300,150 430,168" fill="none" stroke="url(#flow-line-grad)" stroke-width="2"/>
+        <path id="flow-path-2" d="M110,130 C260,130 320,155 430,168" fill="none" stroke="url(#flow-line-grad)" stroke-width="2"/>
+        <path id="flow-path-3" d="M110,210 C260,210 320,180 430,172" fill="none" stroke="url(#flow-line-grad)" stroke-width="2"/>
+        <path id="flow-path-4" d="M110,290 C280,290 300,190 430,172" fill="none" stroke="url(#flow-line-grad)" stroke-width="2"/>
+        <path id="flow-path-out" d="M470,170 C600,170 640,170 790,170" fill="none" stroke="url(#flow-out-grad)" stroke-width="2.5"/>
+
+        <g class="flow-source-group">
+          <circle cx="90" cy="50" r="9" fill="#ffffff" stroke="#8B5CF6" stroke-width="2"/>
+          <text x="112" y="55" class="text-[13px]" fill="#6e6e7a" font-size="13" font-family="Inter, sans-serif" data-i18n="public_market_prices">Market prices</text>
+        </g>
+        <g class="flow-source-group">
+          <circle cx="90" cy="130" r="9" fill="#ffffff" stroke="#635BFF" stroke-width="2"/>
+          <text x="112" y="135" fill="#6e6e7a" font-size="13" font-family="Inter, sans-serif" data-i18n="public_social_news">Social &amp; news feeds</text>
+        </g>
+        <g class="flow-source-group">
+          <circle cx="90" cy="210" r="9" fill="#ffffff" stroke="#38BDF8" stroke-width="2"/>
+          <text x="112" y="215" fill="#6e6e7a" font-size="13" font-family="Inter, sans-serif" data-i18n="public_sales_data">Your own sales data</text>
+        </g>
+        <g class="flow-source-group">
+          <circle cx="90" cy="290" r="9" fill="#ffffff" stroke="#8B5CF6" stroke-width="2"/>
+          <text x="112" y="295" fill="#6e6e7a" font-size="13" font-family="Inter, sans-serif" data-i18n="public_competitors">Competitors</text>
+        </g>
+
+        <circle cx="450" cy="170" r="42" fill="url(#logo-grad)"/>
+        <path d="M434,182V158L450,170L466,158V182" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+        <g>
+          <rect x="790" y="140" width="86" height="60" rx="12" fill="#ffffff" stroke="#e8e8ee" stroke-width="1.5"/>
+          <text x="833" y="166" text-anchor="middle" fill="#0a0a0f" font-size="12" font-weight="600" font-family="Inter, sans-serif" data-i18n="public_today">Today's</text>
+          <text x="833" y="184" text-anchor="middle" fill="#0a0a0f" font-size="12" font-weight="600" font-family="Inter, sans-serif" data-i18n="public_digest">digest</text>
+        </g>
+
+        <circle r="3.5" fill="#8B5CF6"><animateMotion dur="3.2s" repeatCount="indefinite" begin="0s"><mpath href="#flow-path-1"/></animateMotion></circle>
+        <circle r="3.5" fill="#635BFF"><animateMotion dur="2.6s" repeatCount="indefinite" begin="0.4s"><mpath href="#flow-path-2"/></animateMotion></circle>
+        <circle r="3.5" fill="#38BDF8"><animateMotion dur="2.9s" repeatCount="indefinite" begin="0.9s"><mpath href="#flow-path-3"/></animateMotion></circle>
+        <circle r="3.5" fill="#8B5CF6"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.3s"><mpath href="#flow-path-4"/></animateMotion></circle>
+        <circle r="4.5" fill="#38BDF8"><animateMotion dur="2.4s" repeatCount="indefinite" begin="0.2s"><mpath href="#flow-path-out"/></animateMotion></circle>
+      </svg>
+    </div>
+  </section>
+
+  <section id="product" class="mx-auto max-w-6xl px-6 py-24">
+    <div class="max-w-2xl mb-14">
+      <h2 class="text-display-sm text-ink mb-4" data-i18n="public_business_title">One agent, watching everything that moves your business.</h2>
+      <p class="text-[17px] text-ink-soft leading-relaxed" data-i18n="public_business_desc">Exchange rates. Fuel prices. Payday cycles. Local sentiment. Your own sales numbers. Makit reads it all so you don't have to.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="bento p-8 md:col-span-2 md:row-span-1">
+        <div class="w-11 h-11 rounded-[12px] bg-grad-accent flex items-center justify-center mb-6">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 15L7 9L11 12L17 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="text-[19px] font-semibold text-ink mb-2" data-i18n="public_feature_1_title">A daily read, not a dashboard to babysit</h3>
+        <p class="text-[15px] text-ink-soft leading-relaxed" data-i18n="public_feature_1_desc">Set a schedule once. Makit wakes up, does the research, and only surfaces something when there's a real decision to make.</p>
+      </div>
+
+      <div class="bento p-8">
+        <div class="w-11 h-11 rounded-[12px] bg-ink flex items-center justify-center mb-6">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="white" stroke-width="2"/><path d="M10 6V10L13 12" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="text-[17px] font-semibold text-ink mb-2" data-i18n="public_feature_2_title">Three agents, one answer</h3>
+        <p class="text-[14px] text-ink-soft leading-relaxed" data-i18n="public_feature_2_desc">A researcher gathers signals, a critic checks them for holes, before anything reaches you.</p>
+      </div>
+
+      <div class="bento p-8">
+        <div class="w-11 h-11 rounded-[12px] bg-grad-accent flex items-center justify-center mb-6">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="text-[17px] font-semibold text-ink mb-2" data-i18n="public_feature_3_title">Stream in your own data</h3>
+        <p class="text-[14px] text-ink-soft leading-relaxed" data-i18n="public_feature_3_desc">Sales, foot traffic, notes — pipe anything into an Intelligence's webhook and the agent factors it in.</p>
+      </div>
+
+      <div class="bento p-8 md:col-span-2">
+        <div class="w-11 h-11 rounded-[12px] bg-ink flex items-center justify-center mb-6">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="14" height="14" rx="2" stroke="white" stroke-width="2"/><path d="M3 8H17" stroke="white" stroke-width="2"/></svg>
+        </div>
+        <h3 class="text-[19px] font-semibold text-ink mb-2" data-i18n="public_feature_4_title">Bring your own model</h3>
+        <p class="text-[15px] text-ink-soft leading-relaxed" data-i18n="public_feature_4_desc">Bedrock, OpenAI, Anthropic, or Gemini — connect a key, and every Intelligence on your account can use it. No lock-in.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="bg-surface-sunken border-y border-line">
+    <div class="mx-auto max-w-5xl px-6 py-24">
+      <h2 class="text-display-sm text-ink mb-14 text-center" data-i18n="public_how_title">How it works</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div>
+          <p class="text-[13px] font-semibold text-accent mb-3">01</p>
+          <h3 class="text-[17px] font-semibold text-ink mb-2" data-i18n="public_how_1_title">Tell it about your business</h3>
+          <p class="text-[14px] text-ink-soft leading-relaxed" data-i18n="public_how_1_desc">Name, location, and anything specific you want it to watch for.</p>
+        </div>
+        <div>
+          <p class="text-[13px] font-semibold text-accent mb-3">02</p>
+          <h3 class="text-[17px] font-semibold text-ink mb-2" data-i18n="public_how_2_title">Set a schedule</h3>
+          <p class="text-[14px] text-ink-soft leading-relaxed" data-i18n="public_how_2_desc">Daily at a set time, or on an interval — it runs quietly on its own.</p>
+        </div>
+        <div>
+          <p class="text-[13px] font-semibold text-accent mb-3">03</p>
+          <h3 class="text-[17px] font-semibold text-ink mb-2" data-i18n="public_how_3_title">Get your digest</h3>
+          <p class="text-[14px] text-ink-soft leading-relaxed" data-i18n="public_how_3_desc">A plain read on today, delivered to your dashboard, email, or Telegram.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-5xl px-6 py-24 text-center">
+    <h2 class="text-display-sm text-ink mb-4" data-i18n="public_cta_title">Start watching your market today.</h2>
+    <p class="text-[16px] text-ink-soft mb-8" data-i18n="public_cta_desc">Free to start. Bring your own model key when you're ready to run it for real.</p>
+    <a href="register" class="btn-accent" data-i18n="public_cta_account">Create your account</a>
+  </section>
+
+  <%- include('partials/public-footer') %>
+
+  <script src="js/shared.js"></script>
+  <script>
+    (async function () {
+      await Makit.loadLocale();
+      document.title = Makit.t('landing_title');
+      Makit.bindLanguageSelects();
+      Makit.applyI18n();
+    })();
+  </script>
+</body>
+</html>

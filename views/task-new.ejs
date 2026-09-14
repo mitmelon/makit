@@ -1,0 +1,123 @@
+<%- include('partials/header', { title: 'New Intelligence — Makit' }) %>
+    <main class="flex-1 px-6 lg:px-10 py-8 max-w-2xl">
+        <a href="../dashboard" class="text-[13px] text-ink-soft hover:text-ink">&larr; Back to tasks</a>
+        <p class="text-[14px] text-ink-soft mb-8 mt-2">Tell the agent about your business, pick a model, and set when it
+            should check in.</p>
+
+        <div id="no-keys-warning" class="hidden panel p-5 mb-6 border-signal-caution/30 bg-signal-caution/5">
+            <p class="text-[14px] text-ink">You haven't added any AI provider keys yet.</p>
+            <p class="text-[13px] text-ink-soft mt-1">Add one in <a href="../settings"
+                    class="text-accent font-medium">Settings</a> before creating a task — the agent needs a model to
+                think with.</p>
+        </div>
+
+        <form id="task-form" class="space-y-8">
+            <section class="panel p-6 space-y-4">
+                <h2 class="text-[15px] font-semibold text-ink">About the task</h2>
+                <div>
+                    <label class="field-label" for="name">Intelligence name</label>
+                    <input class="field-input" id="name" required placeholder="Morning check" />
+                </div>
+                <div>
+                    <label class="field-label" for="businessName">Business name</label>
+                    <input class="field-input" id="businessName" required placeholder="Petertech Sinotruk Garage" />
+                </div>
+                <div>
+                    <label class="field-label" for="businessAddress">Business address</label>
+                    <input class="field-input" id="businessAddress" required placeholder="Akure, Ondo State, Nigeria" />
+                    <p class="field-hint">Be specific — this is what makes the read local instead of generic.</p>
+                </div>
+                <div>
+                    <label class="field-label" for="businessCategory">What does this business sell or do?</label>
+                    <input class="field-input" id="businessCategory" required
+                        placeholder="Women's clothing and shoes retail" />
+                    <p class="field-hint">Be specific — this is what keeps every search, competitor, and finding
+                        on-topic instead of drifting into unrelated businesses.</p>
+                </div>
+                <div>
+                    <label class="field-label" for="customInstructions">Custom instructions <span
+                            class="text-ink-faint font-normal">(optional)</span></label>
+                    <textarea class="field-input" id="customInstructions" rows="3"
+                        placeholder="We sell truck parts — pay extra attention to fuel prices and market days."></textarea>
+                </div>
+            </section>
+
+            <section class="panel p-6 space-y-4">
+                <h2 class="text-[15px] font-semibold text-ink">Model</h2>
+                <div>
+                    <label class="field-label" for="modelSelect">Which model should this task use?</label>
+                    <select class="field-input" id="modelSelect" required></select>
+                    <p class="field-hint">Populated from the provider keys you've added in Settings.</p>
+                </div>
+                <div>
+                    <label class="field-label" for="parallelKeySelect">Search key (Parallel) <span
+                            class="text-ink-faint font-normal">(optional)</span></label>
+                    <select class="field-input" id="parallelKeySelect">
+                        <option value="">None — agent will rely on what it already knows</option>
+                    </select>
+                </div>
+            </section>
+
+            <section class="panel p-6 space-y-3">
+                <h2 class="text-[15px] font-semibold text-ink">MCP servers <span
+                        class="text-ink-faint font-normal text-[13px]">(optional)</span></h2>
+                <p class="text-[13px] text-ink-soft">Give this Intelligence extra tools — a WhatsApp MCP for
+                    notifications, or any other MCP server you've connected in Settings.</p>
+                <div id="mcp-checkboxes" class="space-y-2"></div>
+                <p id="no-mcp-hint" class="hidden text-[13px] text-ink-faint">No MCP servers connected yet. Add one in
+                    <a href="../settings" class="text-accent font-medium">Settings</a>.
+                </p>
+            </section>
+
+            <section class="panel p-6 space-y-4">
+                <h2 class="text-[15px] font-semibold text-ink">Schedule</h2>
+                <div class="flex gap-3">
+                    <label class="flex items-center gap-2 text-[14px] text-ink">
+                        <input type="radio" name="scheduleType" value="daily" checked /> Daily at a time
+                    </label>
+                    <label class="flex items-center gap-2 text-[14px] text-ink">
+                        <input type="radio" name="scheduleType" value="interval" /> Every N minutes
+                    </label>
+                </div>
+                <div id="daily-fields" class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="field-label" for="dailyTime">Time</label>
+                        <input class="field-input" type="time" id="dailyTime" value="08:00" />
+                    </div>
+                    <div>
+                        <label class="field-label" for="timezone">Timezone</label>
+                        <input class="field-input" id="timezone" value="Africa/Lagos" placeholder="Africa/Lagos" />
+                    </div>
+                </div>
+                <div id="interval-fields" class="hidden">
+                    <label class="field-label" for="intervalMinutes">Minutes between checks</label>
+                    <input class="field-input" type="number" id="intervalMinutes" value="360" min="5" />
+                </div>
+            </section>
+
+            <section class="panel p-6 space-y-4">
+                <h2 class="text-[15px] font-semibold text-ink">Notifications</h2>
+                <label class="flex items-center gap-2.5 text-[14px] text-ink">
+                    <input type="checkbox" id="emailEnabled" /> Email the digest to
+                </label>
+                <input class="field-input" type="email" id="emailAddress" placeholder="owner@business.com" />
+
+                <label class="flex items-center gap-2.5 text-[14px] text-ink mt-2">
+                    <input type="checkbox" id="telegramEnabled" /> Send to a Telegram bot
+                </label>
+                <div class="grid grid-cols-2 gap-4">
+                    <input class="field-input" id="telegramBotToken" placeholder="Bot token" />
+                    <input class="field-input" id="telegramChatId" placeholder="Chat ID" />
+                </div>
+            </section>
+
+            <p id="error" class="text-[13px] text-[#c62b21] hidden"></p>
+
+            <div class="flex justify-end gap-3">
+                <a href="../dashboard" class="btn-secondary">Cancel</a>
+                <button type="submit" class="btn-primary" id="submit-btn">Create Intelligence</button>
+            </div>
+        </form>
+    </main>
+    <script src="/js/task-new-page.js"></script>
+    <%- include('partials/footer') %>

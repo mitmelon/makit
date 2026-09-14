@@ -1,0 +1,620 @@
+{
+  "users": [
+    {
+      "name": "Adeyeye George",
+      "email": "gestech11@gmail.com",
+      "passwordHash": "$2a$12$Ijl7czHUJD9OmvD.wHJXbe88GGXeF6fKY.uc5U7Fljf87gfRWHpaO",
+      "language": "en",
+      "createdAt": 1789292879013,
+      "id": "15278cbe-7de7-446e-a0c4-a12b61ee2596"
+    },
+    {
+      "name": "Test User",
+      "email": "ejscheck@example.com",
+      "passwordHash": "$2a$12$5O51ibA/UiZVt3ou3PW7/.4SJCwnojZfxYkD48k4d3cnmRLL3ks7.",
+      "language": "en",
+      "createdAt": 1789296552292,
+      "id": "5a8342f4-f2ec-45c6-97fc-da189fdc2494"
+    },
+    {
+      "name": "Test User",
+      "email": "testjs@example.com",
+      "passwordHash": "$2a$12$J.Spn89FBNGzs/abUahmReCzZyiXIlpY9cRjZ0nilpHDR1Abjzpqm",
+      "language": "en",
+      "createdAt": 1789297512566,
+      "id": "9cce973a-6f04-48cf-bdaf-41a526c06db2"
+    },
+    {
+      "name": "Persist Test",
+      "email": "persisttest@example.com",
+      "passwordHash": "$2a$12$PogKN/7FHoAOuWK7h2hpTeYWsSDMl7EW6Pmh/GAv.YL.Te.zwi5OS",
+      "language": "en",
+      "createdAt": 1789299132600,
+      "id": "99b44c31-c5d7-4b21-89e2-dd09841c96ca"
+    }
+  ],
+  "apiKeys": [
+    {
+      "userId": "15278cbe-7de7-446e-a0c4-a12b61ee2596",
+      "label": "search",
+      "provider": "parallel",
+      "region": null,
+      "encryptedKey": "WrqfwcvWTSUrWcLU.kr0uXvWgBmhW3kZIvcCZOw==.j4t5lPC/FGpqGUhzU115vte1QtbMPNHo5nnqLYZu7cuITBmEdW3vLQ==",
+      "createdAt": 1789293058097,
+      "id": "22d7b512-ae8e-4d36-a071-1609afcf763c"
+    },
+    {
+      "userId": "15278cbe-7de7-446e-a0c4-a12b61ee2596",
+      "label": "gemini",
+      "provider": "gemini",
+      "region": null,
+      "encryptedKey": "RSaKzF4Hz8mGwSpT.lsuHee4DVXPwyt/OfHfMEQ==.hLH1KT1ssJw5WL/XGLQhTOJ6CNgc9HFExcm/w8mYiKFBYq56Yad/UQ3molYeRqQ71gJXjo0=",
+      "createdAt": 1789293073258,
+      "id": "9dfe1bf9-bc8e-4857-b561-0f950e6dfa4c"
+    },
+    {
+      "userId": "79c6cb41-86b7-4464-82de-fdcae3da82ce",
+      "label": "gemini",
+      "provider": "gemini",
+      "region": null,
+      "encryptedKey": "ecQ34bobC4b4WJXf.VjcGlhxa8A7vZxVud5VSaw==.qbjyt4VLmMFF5MHNbCnTAuGGjeTUcaHOzdzPB8XTDHfrnUf2nh7Wx8QwCX0v3bPZ1VUxpBc=",
+      "createdAt": 1789299190813,
+      "id": "b671482d-3a44-4faf-85ce-18a0a1d3460c"
+    },
+    {
+      "userId": "79c6cb41-86b7-4464-82de-fdcae3da82ce",
+      "label": "search",
+      "provider": "parallel",
+      "region": null,
+      "encryptedKey": "fW3YnEyMcnT4RfAZ.tcnkWE1FB8gckB2Ni6Z4Lw==.34rn1DbqSPMGq5QjyjJLRKyYjy7pkGT8+Keei8aIQLeos/HtTGuZuQ==",
+      "createdAt": 1789299213087,
+      "id": "c0a784a4-aa37-46dd-b571-cc36c2f38dbf"
+    }
+  ],
+  "mcpServers": [],
+  "tasks": [
+    {
+      "name": "Business check",
+      "businessName": "Manomite Limited",
+      "businessAddress": "11 Emilloro Street, Oda Town, Akure, Ondo State, Nigeria",
+      "businessCategory": "WE build software developments for businesses, websites and IT consultancy, computer trainings and home lessons",
+      "customInstructions": "",
+      "apiKeyId": "9dfe1bf9-bc8e-4857-b561-0f950e6dfa4c",
+      "modelId": "gemini-3.1-flash-lite",
+      "parallelApiKeyId": "22d7b512-ae8e-4d36-a071-1609afcf763c",
+      "mcpServerIds": [],
+      "schedule": {
+        "type": "interval",
+        "minutes": 5
+      },
+      "notify": {
+        "email": {
+          "enabled": false,
+          "address": ""
+        },
+        "telegram": {
+          "enabled": true,
+          "botToken": "7078260086:AAGaxUxNiqHvfX3Pew26NquXebfZqP1mqF4",
+          "chatId": "1094311254"
+        }
+      },
+      "userId": "15278cbe-7de7-446e-a0c4-a12b61ee2596",
+      "status": "paused",
+      "webhookToken": "8a9284c94931661e98a5eeb3caedc858369bc58a",
+      "nextRunAt": 1789295040939,
+      "lastRunAt": 1789294786158,
+      "lastRunStatus": "completed",
+      "createdAt": 1789293148791,
+      "id": "f9600e70-4093-45f1-abf3-a91afc8d93e3"
+    },
+    {
+      "name": "Business check",
+      "businessName": "Manomite Limited",
+      "businessAddress": "11 Emilloro Street, Oda Town, Akure, Ondo State, Nigeria",
+      "businessCategory": "We build software developments for businesses, websites and IT consultancy, computer trainings and home lessons",
+      "customInstructions": "",
+      "apiKeyId": "b671482d-3a44-4faf-85ce-18a0a1d3460c",
+      "modelId": "gemini-3.1-flash-lite",
+      "parallelApiKeyId": "c0a784a4-aa37-46dd-b571-cc36c2f38dbf",
+      "mcpServerIds": [],
+      "schedule": {
+        "type": "interval",
+        "minutes": 10
+      },
+      "notify": {
+        "email": {
+          "enabled": false,
+          "address": ""
+        },
+        "telegram": {
+          "enabled": true,
+          "botToken": "7078260086:AAGaxUxNiqHvfX3Pew26NquXebfZqP1mqF4",
+          "chatId": "1094311254"
+        }
+      },
+      "userId": "79c6cb41-86b7-4464-82de-fdcae3da82ce",
+      "status": "paused",
+      "webhookToken": "dba89c99a2c0daa3c18b91f6f089f60f83ed5adc",
+      "nextRunAt": 1789300500320,
+      "lastRunAt": 1789299920824,
+      "lastRunStatus": "completed",
+      "createdAt": 1789299294957,
+      "id": "6ffd9c72-31a0-4abd-8d30-b5ff0f2a02d3"
+    }
+  ],
+  "runs": [
+    {
+      "taskId": "f9600e70-4093-45f1-abf3-a91afc8d93e3",
+      "userId": "15278cbe-7de7-446e-a0c4-a12b61ee2596",
+      "status": "completed",
+      "createdAt": 1789293156950,
+      "id": "2997d824-3dd3-48db-ab4d-0f787589f13b",
+      "digest": {
+        "status": "cautious",
+        "headline": "Focus your business outreach on current software and training demand rather than broad economic predictions.",
+        "whats_happening": [
+          "Local market feedback suggests that businesses in Akure are discerning; they aren't just looking for cheap IT, they are looking for reliable solutions that actually work.",
+          "Your software and consultancy services operate differently than general retail; your value is in solving specific professional problems, not just cost-cutting.",
+          "Your training and home lesson services have a different client base than your consultancy, so keep those two marketing efforts separate to avoid diluting your message."
+        ],
+        "what_to_do": "Contact three of your most reliable past software or training clients today to ask: 'What is the biggest IT or skill-related challenge your team is facing this quarter?' This will give you a clearer view of actual demand than general economic trends.",
+        "confidence": 0.7
+      },
+      "transcript": [
+        {
+          "agent": "Researcher",
+          "role": "user",
+          "content": [
+            "local business environment for IT consultancy, software development, and computer training services in Akure, Ondo State, Nigeria. Current trends in digital services and education for businesses in Akure."
+          ]
+        },
+        {
+          "agent": "Researcher",
+          "role": "assistant",
+          "content": [
+            "Based on the current economic environment in Akure and the nature of your services (software development, IT consultancy, and training), here are my observations regarding your customers' ability to spend right now:\n\n*   **Prioritizing \"Survival\" over \"Optimization\":** Many businesses in Akure are currently focused on managing rising operational costs (fuel, logistics, and inflation). In this climate, they are less likely to invest in \"nice-to-have\" software upgrades or digital transformation projects unless those projects offer immediate, tangible cost savings or a direct, rapid increase in revenue. \n*   **The \"Training\" Opportunity:** While bespoke enterprise software development might face budget resistance, there is a consistent, growing demand for **practical digital skills**. Individuals and small business owners are actively seeking low-cost, short-term training to improve their own efficiency (e.g., using digital tools to track sales, manage inventory, or run online marketing). This is a \"spend-to-earn\" investment that is often easier for customers to justify than a large consultancy fee.\n*   **Cautious Spending on IT Consultancy:** Clients are likely hesitant to hire external consultants for high-level strategy right now. However, they are more willing to pay for **\"quick-fix\" IT services**—such as website maintenance, fixing specific software bugs, or basic cybersecurity—because these represent solved problems rather than speculative investments.\n*   **Targeting the Right Sector:** Not all sectors in Akure are struggling equally. Focus your efforts on businesses that are actively digitizing to survive (e.g., local educational centers, professional services, or businesses looking to pivot to e-commerce). These sectors have a clearer understanding of why they need your software development or web services and are more likely to have allocated budget for them.\n*   **The \"Home Lessons\" Market:** Your home lessons service likely targets parents who prioritize education as an essential, rather than discretionary, expense. This segment is generally more resilient to economic downturns than business-to-business consultancy, as parents often reallocate other household spending to ensure their children’s academic or technical development.\n\n**Recommendation:**\nTo bridge the gap while economic pressure is high, consider shifting your messaging from \"digital transformation\" (which sounds expensive and long-term) to **\"immediate efficiency and cost-reduction\"** (which sounds like an investment with a fast return). For your training services, focus on *employable skills* or *business-growth tools* rather than general computer literacy."
+          ]
+        },
+        {
+          "agent": "Critic",
+          "role": "user",
+          "content": [
+            "The researcher suggests that Manomite Limited (software dev, IT consultancy, and training in Akure) should shift focus toward immediate cost-saving IT services and practical skill-based training due to economic constraints. Does this accurately reflect a business in the software/IT/education space, and are these suggestions relevant to their specific service offering?"
+          ]
+        },
+        {
+          "agent": "Critic",
+          "role": "assistant",
+          "content": [
+            "To evaluate the researcher’s recommendation, we must weigh the economic climate against the specific operational model of **Manomite Limited**. Here is my skeptical assessment:\n\n### 1. The \"Economic Constraints\" Hypothesis: A Half-Truth\nThe researcher suggests shifting toward \"immediate cost-saving IT services.\" While this sounds pragmatic, it is a **generic macroeconomic trend** often applied as a \"cure-all\" to any business in a downturn. \n*   **The Flaw:** In the software/IT consultancy space, \"cost-saving\" is often a euphemism for \"race to the bottom\" pricing. If Manomite pivots to low-cost services, they risk commoditizing their work. If they are selling bespoke software development, their clients are usually businesses looking to *increase* revenue or operational efficiency, not just save on IT spend. \n*   **The Risk:** This suggestion assumes that the client base is strictly small, cash-strapped local businesses. If Manomite has enterprise or mid-market clients, a \"cost-saving\" pivot might actually alienate them by signaling a decline in quality or capability.\n\n### 2. Relevance to \"Computer Trainings and Home Lessons\"\nThis is the area where the research is most likely **drifting off-category.**\n*   **The Flaw:** The researcher conflates \"practical skill-based training\" with \"economic constraints.\" In the Akure market (and similar emerging IT hubs), training demand is usually driven by *aspirational* growth—people want to learn to code to get high-paying remote jobs or launch startups—not necessarily to save costs. \n*   **Off-Category Concern:** Training for personal upskilling and corporate consultancy are two entirely different business models. If the researcher implies that Manomite should pivot to \"cost-saving training\" (e.g., basic data entry or low-level tech support), they are advising Manomite to pivot away from high-margin professional development (coding, system architecture) toward low-margin vocational training. This could destroy the brand’s positioning as a professional IT consultancy.\n\n### 3. The \"Stale\" Factor\nThe advice to focus on \"cost-saving\" is a perennial recommendation that surfaces every time inflation rises. It is a **lazy, non-specific observation.**\n*   **Missing Analysis:** The research fails to mention *what* IT services are actually in demand in Akure. Is there a shortage of automation? Is cloud migration the trend? Is there a demand for cybersecurity due to local fraud concerns? \"Cost-saving\" is an empty bucket; it tells the business nothing about *which* services to prioritize.\n\n### 4. Summary of Concerns\n*   **Lack of Strategic Depth:** \"Economic constraints\" is a convenient, yet unverified, catch-all. It assumes Manomite’s clients have no budget for growth, which may be factually incorrect for the software sector.\n*   **Confused Value Proposition:** The recommendation for \"skill-based training\" is vague. Are they suggesting high-ticket B2B training (corporate upskilling) or low-ticket B2C home lessons? These require different marketing engines and skill sets.\n*   **Potential for Brand Erosion:** Encouraging a consultancy to focus on \"cost-cutting\" can lead to a trap where the business works more for less money, which is the antithesis of a scalable software development model.\n\n### Final Verdict: Proceed with Caution\n**This research is NOT safe to use as a primary strategy.** It reads as a generic economic forecast applied broadly to a tech business without understanding the nuances of the software/consultancy revenue model.\n\n**Before taking action, ask the researcher for:**\n1.  **Data on Manomite’s current margins:** Does their software development division actually *need* to be cheaper, or does it need to be more efficient?\n2.  **Market Evidence:** Is there actual evidence of price-sensitivity in the Akure tech sector, or is the researcher projecting national-level inflation trends onto a local niche market?\n3.  **Customer Segmentation:** They must distinguish between the consultancy side (B2B) and the training side (B2C). A strategy for one should not be blindly applied to the other."
+          ]
+        },
+        {
+          "agent": "Orchestrator",
+          "role": "user",
+          "content": [
+            "Research current conditions for this business and produce today's digest."
+          ]
+        },
+        {
+          "agent": "Scout",
+          "role": "user",
+          "content": [
+            "Research this business's market following the three-part task in your instructions: feeds, competitors, and opportunities. Opportunities matter most — spend real search effort on what customers actually want and struggle with, not just on finding competitors."
+          ]
+        }
+      ],
+      "completedAt": 1789293243105
+    },
+    {
+      "taskId": "f9600e70-4093-45f1-abf3-a91afc8d93e3",
+      "userId": "15278cbe-7de7-446e-a0c4-a12b61ee2596",
+      "status": "failed",
+      "createdAt": 1789293480603,
+      "id": "55641d05-88e8-4777-9d76-20b74719ffcf",
+      "error": "fetch failed",
+      "completedAt": 1789293610296
+    },
+    {
+      "taskId": "f9600e70-4093-45f1-abf3-a91afc8d93e3",
+      "userId": "15278cbe-7de7-446e-a0c4-a12b61ee2596",
+      "status": "completed",
+      "createdAt": 1789293780926,
+      "id": "a2642ad0-7ac9-45e9-9fd9-fd1245e51cb0",
+      "digest": {
+        "status": "cautious",
+        "headline": "Business is steady, but your clients prioritize reliability and trust over new complex investments right now.",
+        "whats_happening": [
+          "Local businesses in Akure are dealing with power instability, which makes them wary of complex software that might fail when the grid goes down.",
+          "Parents are interested in computer literacy for their children, but they want clear, visible progress in these \"home lessons\" rather than generic training.",
+          "There is a strong preference for local partners who can provide in-person support, given the unpredictability of remote IT management.",
+          "Trust is the most valuable currency; customers are looking for someone who can fix immediate tech issues consistently rather than long-term consultants."
+        ],
+        "what_to_do": "Instead of selling complex software, approach a local business owner with a \"Reliability Audit\"—a small, low-cost service to check their IT setup for issues like power-surge protection or data backup. This builds trust and identifies their real, immediate needs.",
+        "confidence": 0.6
+      },
+      "transcript": [
+        {
+          "agent": "Researcher",
+          "role": "user",
+          "content": [
+            "current economic conditions and market demand for software development, IT consultancy, and computer training services in Akure, Ondo State, Nigeria. Look for recent trends in digital adoption for businesses or educational service demand in the region."
+          ]
+        },
+        {
+          "agent": "Researcher",
+          "role": "assistant",
+          "content": [
+            "As a local market researcher, I have analyzed your service offerings against the current economic landscape in Akure. Since I cannot access real-time local economic data due to connectivity issues, I have synthesized these observations based on current trends for tech and education services in the Nigerian market, specifically tailored to the context of Akure:\n\n### **Economic Context & Customer Spending Power**\n*   **Business Clients:** Most small-to-medium businesses (SMBs) in Akure are currently prioritizing essential operational costs due to inflationary pressures and high fuel/energy costs. Spending on **software development or new websites** is often viewed as a \"luxury\" or non-essential expense unless it directly reduces operational costs (e.g., an inventory management system or an automated billing tool).\n*   **Training & Home Lessons:** Demand for **computer training and home lessons** often remains resilient, even in difficult economic times, because it is viewed by parents and young professionals as an \"investment in future employment.\" It is more recession-resistant than high-end IT consultancy.\n\n### **Market Opportunities (What customers are willing to spend on)**\n*   **\"Efficiency\" Projects:** You will likely find more interest from local businesses if you frame your software and website services as **cost-saving tools** rather than just \"digital presence.\" If you can show a business owner how a software tool can save them 5 hours of work per week or prevent loss of stock, they are more likely to find the budget.\n*   **Upskilling Demand:** With the national focus on digital literacy, there is a consistent market for practical, job-ready computer training (e.g., data analysis, office productivity software, or web development basics). Families and individuals often sacrifice other discretionary spending to pay for these skills because they are seen as a gateway to better income.\n*   **Hyper-Local Positioning:** Being located in Oda Town allows you to serve businesses and households that may prefer a local partner they can meet in person, rather than hiring expensive firms from Lagos or Abuja.\n\n### **Suggested Actionable Strategy**\n*   **Value-Based Marketing:** When talking to business owners, don't sell \"a website.\" Sell \"a system that gets you more customers while you sleep.\" Focus on the ROI (Return on Investment) of your software.\n*   **Targeted Training Packages:** Consider creating \"Mini-Bootcamps\" rather than long, expensive courses. Short, skill-specific training modules for students or workers who need to add a new skill to their CV in 4–6 weeks are easier for people to afford right now.\n*   **Consultancy as a Low-Barrier Entry:** Offer a low-cost, one-off \"IT Audit\" for local businesses. This allows you to get your foot in the door, build trust, and identify where they actually need more expensive software work, without asking for a large upfront commitment.\n\n**Note:** Because local market conditions in Nigeria can shift rapidly based on fuel prices and government policy, I recommend keeping a close watch on the purchasing frequency of your current customers. If you notice a slowdown, pivot your marketing focus even more heavily toward *essential* business tools (cost-reduction) and *career-focused* training."
+          ]
+        },
+        {
+          "agent": "Critic",
+          "role": "user",
+          "content": [
+            "The researcher analyzed the market for software development, IT consultancy, and computer training in Akure, focusing on current trends in cost-saving software for businesses and career-focused training for individuals. The researcher advises emphasizing ROI and practical skills. Does this accurately address the business needs of Manomite Limited, or does it contain off-category or speculative content?"
+          ]
+        },
+        {
+          "agent": "Critic",
+          "role": "assistant",
+          "content": [
+            "As a skeptical reviewer, I have evaluated your research findings regarding Manomite Limited. Here is my assessment of the report’s validity, relevance, and accuracy.\n\n### 1. The \"Off-Category\" Problem\nThe research exhibits a significant drift. While \"software development\" and \"IT consultancy\" are core business functions, **\"home lessons\"**—a service explicitly listed for Manomite Limited—is entirely missing from the analysis. \n*   **The Flaw:** By focusing strictly on \"career-focused training,\" the research ignores the *B2C educational market* (e.g., K-12 tutoring, remedial tech literacy for children, or hobbyist home-based computer training). If Manomite Limited’s revenue model relies on private home lessons, the advice to emphasize \"ROI\" is largely irrelevant to parents hiring tutors for their children.\n\n### 2. Stale or Misapplied National Trends\nThe research suggests emphasizing \"cost-saving software\" as a primary market trend. \n*   **The Flaw:** This sounds like a generic, top-down observation pulled from national business journals. In the specific local context of Akure, businesses are often less concerned with complex \"cost-saving software\" (which implies enterprise-level process automation) and more concerned with **basic digitization and stability**. Applying a \"corporate ROI\" pitch to local SMEs in Akure may be a strategic misfire if the local demand is for basic e-commerce setups, social media integration, or simple record-keeping tools.\n\n### 3. Guesses Dressed as Facts\nThe researcher advises emphasizing \"ROI and practical skills.\" \n*   **The Flaw:** This is a subjective recommendation presented as an objective market requirement. There is no evidence provided to suggest that clients in Akure prioritize ROI over, for example, *immediate technical support/reliability* or *brand reputation*. Advising a business to pivot its entire marketing strategy based on a generalized \"ROI\" narrative is speculative without local customer segmentation data.\n\n### 4. Missing Context\nThe research fails to mention the local competitive landscape or the technical infrastructure limitations in Akure (e.g., power supply issues, internet reliability). Any IT consultancy firm in this region that does not account for these *local realities* in their sales pitch is ignoring the primary pain points of their clients. Selling software that relies on 100% uptime in an area with inconsistent power is a liability, not an ROI-driver.\n\n***\n\n### Verdict\n**This research is NOT safe to use as a basis for business strategy.**\n\n**My specific concerns for you to address:**\n1.  **Scope Gap:** Either acknowledge that the \"home lessons\" arm of the business is being deprioritized, or include a strategy for how that sector operates.\n2.  **Market Realism:** The advice on \"cost-saving software\" is too high-level. You need to verify if Akure-based SMEs are actually looking for complex ROI-based software or if they are looking for basic digital presence and troubleshooting.\n3.  **Actionable Data vs. Platitudes:** \"Emphasize ROI\" is a consultant's catch-all phrase. Demand the researcher provides evidence of local customer pain points—is it *cost*, or is it *lack of trust in local vendors*? If it's trust, an \"ROI\" pitch won't save you."
+          ]
+        },
+        {
+          "agent": "Orchestrator",
+          "role": "user",
+          "content": [
+            "Research current conditions for this business and produce today's digest."
+          ]
+        }
+      ],
+      "completedAt": 1789293879992
+    },
+    {
+      "taskId": "f9600e70-4093-45f1-abf3-a91afc8d93e3",
+      "userId": "15278cbe-7de7-446e-a0c4-a12b61ee2596",
+      "status": "completed",
+      "createdAt": 1789294140257,
+      "id": "b1c8091a-ede2-4c15-9960-c81c4a5d062b",
+      "digest": {
+        "status": "cautious",
+        "headline": "Focus on building trust and reliability in your IT services today to distinguish yourself from temporary competitors.",
+        "whats_happening": [
+          "Local businesses in Akure are wary of IT services because they fear providers will abandon projects or offer poor long-term support.",
+          "Infrastructure challenges like power and connectivity remain the biggest real-world hurdles for your clients, more so than the software features themselves.",
+          "Your combined model of enterprise work and local training creates a brand identity challenge; prioritize clear, professional communication that doesn't dilute your technical expertise."
+        ],
+        "what_to_do": "Reach out to two of your previous clients today—not to sell anything, but simply to ask how their systems are performing and if they need any quick troubleshooting; this reinforces your reputation as a reliable partner who sticks around.",
+        "confidence": 0.8
+      },
+      "transcript": [
+        {
+          "agent": "Researcher",
+          "role": "user",
+          "content": [
+            "current market conditions for IT consultancy, software development, web development, and computer training in Akure, Ondo State, Nigeria. Look for trends in business digitalization or educational needs."
+          ]
+        },
+        {
+          "agent": "Researcher",
+          "role": "assistant",
+          "content": [
+            "Based on the current economic and digital landscape in Akure, here are my observations regarding your service offerings:\n\n### **Can Customers Afford Your Services?**\n*   **The \"Digitalization\" Pressure:** Many businesses in Akure are currently feeling the pressure to move online to stay competitive, particularly in sectors like retail, local logistics, and professional services. However, due to inflation and high operational costs in Nigeria, these businesses are prioritizing **low-cost, high-impact solutions**. They are more likely to pay for a website or a simple software tool that directly saves them money or brings in immediate sales, rather than \"nice-to-have\" enterprise-level upgrades.\n*   **Training & Education:** Demand for computer training remains high because young people in Akure see IT skills as a way to access remote global work or freelance income. Parents are increasingly willing to pay for \"home lessons\" if they see a clear, tangible path to certification or job readiness for their children.\n\n### **Market Opportunities for You**\n*   **Business Consultancies:** Instead of pitching \"software development\" (which sounds expensive), pitch \"automation of records\" or \"online sales portals.\" Focus your consultancy on how your software pays for itself by reducing paper waste or manual admin time. \n*   **Upskilling Demand:** There is a clear alignment with state-level initiatives in Ondo, which are emphasizing technology-driven education. You can leverage this by positioning your computer training and home lessons as \"career-ready\" programs rather than general IT literacy.\n*   **Pricing Strategy:** Because cash flow is tight for many local businesses, consider offering \"tiered\" pricing. For example:\n    *   **\"Essentials\" Package:** A basic landing page or simple database tool that is affordable for small shops.\n    *   **\"Growth\" Package:** More advanced consultancy and custom software for businesses that are ready to scale.\n\n### **Key Constraints**\n*   **Budget Sensitivity:** Assume that every prospective client is currently choosing between paying for IT services and paying for their basic overhead (power, stock, rent). You must prove **Return on Investment (ROI)** immediately.\n*   **Competition:** You are competing against both other local consultants and global low-cost, do-it-yourself website builders (like Wix or Shopify) that businesses might try to use themselves to save money. Your advantage is your **local presence, trust, and ability to troubleshoot** on-site, which these platforms cannot offer.\n\n**Summary for Manomite Limited:**\nYou are in a viable market, but you should move away from selling \"IT services\" as a generic product. Instead, sell **\"Profitability and Efficiency Solutions.\"** Your clients have money to spend, but only if they can see how that money will return to them quickly in the form of sales or time saved."
+          ]
+        },
+        {
+          "agent": "Critic",
+          "role": "user",
+          "content": [
+            "I have researched the IT market in Akure, focusing on software, websites, and training. The findings highlight high demand for practical, ROI-driven IT solutions for local businesses, as well as demand for skill-building training for students. I am focusing on shifting the pitch from \"IT services\" to \"efficiency and sales growth solutions\" to match local budget sensitivity. Does this seem relevant and on-category for Manomite Limited?"
+          ]
+        },
+        {
+          "agent": "Critic",
+          "role": "assistant",
+          "content": [
+            "To assess your strategy, I have reviewed the findings against the profile of **Manomite Limited**. Here is my skeptical breakdown of your proposed approach:\n\n### 1. The \"Rebranding\" Risk (On-Category vs. Off-Category)\nYou are shifting from \"IT services\" to \"efficiency and sales growth solutions.\" \n*   **The Concern:** This is a classic \"consultant’s pivot\" that risks **drifting into an unrelated category.** If you market yourself as a sales growth engine, you are no longer competing with IT firms; you are competing with marketing agencies, business coaches, and management consultants. \n*   **The Reality Check:** Can Manomite Limited actually deliver a measurable ROI on sales? If you build a website but the client’s product is poor or their sales team is incompetent, you will be held responsible for the lack of growth. Unless you are offering **digital marketing/SEO/lead-gen services**, branding yourself as a \"sales growth\" provider is a dangerous overpromise. Stick to \"IT Efficiency\" (saving money/time) rather than \"Sales Growth\" (making money).\n\n### 2. The \"Local Market\" Guesswork\n*   **The Concern:** You mention \"high demand for ROI-driven solutions\" and \"local budget sensitivity\" in Akure. \n*   **The Reality Check:** This is a **generalization dressed up as a fact.** Every business in every city on earth is \"budget-sensitive\" and wants \"ROI.\" This is generic business advice that applies to a bakery as much as it applies to a software firm. You haven't proven that the Akure market specifically is behaving this way due to localized economic conditions. Are you basing this on actual interviews with business owners in Akure, or are you projecting standard economic theory onto a local map?\n\n### 3. The \"Training\" Mismatch\n*   **The Concern:** You are bundling \"software development for businesses\" with \"home lessons/computer training.\"\n*   **The Reality Check:** **These are two distinct business models.** A business owner looking for a high-end software solution will not be impressed by a company that also does \"home lessons.\" \n*   **The Flaw:** By mixing B2B professional services with B2C tutoring, you dilute your brand. If you pitch to a local business, emphasizing your \"home lessons\" arm makes you look like a small-time local instructor rather than a robust software developer. If you pitch to a student, emphasizing your \"enterprise software\" credentials might make you seem overpriced.\n\n### 4. Is this \"National News\" misapplied?\n*   **The Concern:** The \"Digital Transformation\" narrative.\n*   **The Reality Check:** The current trend of \"digitizing local SMEs\" is a global buzzword. Investors and tech hubs love it, but the reality for a firm like Manomite in Akure is often different. Many local businesses in secondary cities still operate on manual processes not because they haven't heard of IT, but because of infrastructure, power, and connectivity issues. If your pitch ignores the **infrastructure constraints** of your specific location, your \"efficiency solutions\" will fail on deployment.\n\n### Final Verdict:\n**This research is currently unsafe to use as a strategic foundation.** \n\n*   **It is unfocused:** You are trying to be a software house, a business consultant, and a tutor all at once.\n*   **It lacks specific local validation:** You have identified \"needs\" that exist everywhere, but you haven't identified what *prevents* the average Akure business from hiring an IT firm today (e.g., cost, lack of trust in local providers, or actual reliance on offline systems).\n\n**My recommendation:** \nDrop the \"sales growth\" rhetoric—it is too far from your core technical competency. Focus your research on **\"Trust and Reliability.\"** In a local market, the biggest hurdle for IT services isn't the *feature set* of the software; it’s the fear that the developer will disappear mid-project or fail to provide support. If you solve for *reliability*, you will win more business than if you promise *sales growth*."
+          ]
+        },
+        {
+          "agent": "Orchestrator",
+          "role": "user",
+          "content": [
+            "Research current conditions for this business and produce today's digest."
+          ]
+        },
+        {
+          "agent": "Scout",
+          "role": "user",
+          "content": [
+            "Research this business's market following the three-part task in your instructions: feeds, competitors, and opportunities. Opportunities matter most — spend real search effort on what customers actually want and struggle with, not just on finding competitors."
+          ]
+        }
+      ],
+      "completedAt": 1789294185102
+    },
+    {
+      "taskId": "f9600e70-4093-45f1-abf3-a91afc8d93e3",
+      "userId": "15278cbe-7de7-446e-a0c4-a12b61ee2596",
+      "status": "failed",
+      "createdAt": 1789294440272,
+      "id": "f381f38d-b7d4-4cbf-b1ff-843d930c3714",
+      "error": "fetch failed",
+      "completedAt": 1789294442727
+    },
+    {
+      "taskId": "f9600e70-4093-45f1-abf3-a91afc8d93e3",
+      "userId": "15278cbe-7de7-446e-a0c4-a12b61ee2596",
+      "status": "completed",
+      "createdAt": 1789294740941,
+      "id": "381badee-25f8-41b2-9b3c-91947b444bdb",
+      "digest": {
+        "status": "cautious",
+        "headline": "Your business has two distinct audiences in Akure: local businesses needing efficiency and households seeking education.",
+        "whats_happening": [
+          "Businesses in Akure are focusing on local stability, prioritizing tools that help them manage inventory or increase sales over general website updates.",
+          "There is steady local interest in IT skill-building, specifically for youth and students looking to gain competitive career advantages.",
+          "The market is currently fragmented; your B2B consultancy requires building trust through clear, small-scale wins, while your B2C training needs a clear value proposition for parents."
+        ],
+        "what_to_do": "Focus your B2B marketing this week on one specific pain point—like helping a shop digitize their inventory—rather than selling general \"software development.\" For home lessons, target parents specifically with \"career-ready\" skills for their children, not just general computer lessons.",
+        "confidence": 0.8
+      },
+      "transcript": [
+        {
+          "agent": "Researcher",
+          "role": "user",
+          "content": [
+            "current business environment for software development, IT consultancy, and computer training services in Akure, Ondo State, Nigeria. Look for local economic factors, internet/power infrastructure news, and demand for digital services in Akure."
+          ]
+        },
+        {
+          "agent": "Researcher",
+          "role": "assistant",
+          "content": [
+            "Based on an assessment of the local market in Akure, here is a summary of the current environment for software development, IT consultancy, and computer training services:\n\n*   **Growing demand for digital skills:** There is a persistent interest in ICT training in Akure. Individuals are increasingly seeking these skills to improve their employability, which suggests that \"computer training and home lessons\" remain a viable service, provided you market them as career-enhancing opportunities rather than just general lessons.\n*   **Business digitalization is a long-term trend:** While the national software development market is projected to grow (at a CAGR of approximately 7.6%), local businesses in Akure may be more cautious with spending due to current national economic pressures (inflation and high operational costs). They are more likely to invest in software if it directly solves an immediate operational problem (e.g., reducing manual work, tracking sales, or digitizing customer records) rather than \"general\" website development.\n*   **Operational hurdles for clients:** Your potential clients (local businesses) are facing significant overhead costs, particularly regarding power (fuel/generator costs) and reliable internet access. When pitching your consultancy or software services, emphasize how your solutions can **save them money or operational time** in the long run. If your software can function efficiently with limited connectivity or help them track expenses, that is a strong selling point.\n*   **Competitive Landscape:** There are established ICT training and software firms operating in Akure (such as VOKS Technologies). This confirms that there is an existing market, but it also means you are competing for the attention of a relatively small pool of businesses that have the budget to spend on digital transformation.\n*   **Spending Capacity:** Because of the current economic environment in Nigeria, you may find that prospective clients have less disposable income than in previous years. \n    *   *Strategy Tip:* For \"home lessons\" and \"training,\" consider offering tiered pricing or group workshops to make them more accessible. For \"software development,\" consider a modular approach where clients can start with a small, affordable project rather than a large, expensive system overhaul.\n\n**Summary for your planning:** Your customers are likely prioritizing essential business expenses. Position your IT consultancy and software development services not as luxury tech upgrades, but as **cost-cutting tools** that address the specific challenges businesses in Akure are currently navigating (high energy costs and administrative inefficiencies)."
+          ]
+        },
+        {
+          "agent": "Critic",
+          "role": "user",
+          "content": [
+            "I have researched the environment for Manomite Limited in Akure. The findings suggest a mixed market: high demand for training but cautious spending on software from businesses due to economic pressure. The advice focuses on framing services as cost-saving tools. Does this seem relevant and accurate for a business doing software development, websites, IT consultancy, and training in Akure?"
+          ]
+        },
+        {
+          "agent": "Critic",
+          "role": "assistant",
+          "content": [
+            "As a skeptical reviewer, I have evaluated your findings regarding Manomite Limited’s position in the Akure market. While the premise is logical, there are several red flags regarding the specificity, validity, and scope of your research.\n\nHere are my primary concerns:\n\n### 1. The \"Economic Pressure\" Generalization (Stale/Guesswork)\nYou claim businesses in Akure are \"cautious on software spending due to economic pressure.\" This is a classic \"macro-economic trope.\" While it is true that inflation is a national issue in Nigeria, you are treating a national economic narrative as a localized fact for Akure. \n*   **The Flaw:** Is there any evidence that Akure businesses are specifically cutting IT budgets, or are they perhaps *increasing* them to automate processes because of the rising cost of manual labor? You have presented a guess as a fact. Without local data (e.g., surveys of Akure SME owners), this is just speculative pessimism.\n\n### 2. The \"Training Demand\" Assumption (Unverified)\nYou state there is \"high demand for training.\" \n*   **The Flaw:** This is dangerously vague. What *kind* of training? If the demand is for basic computer literacy (Word/Excel), Manomite’s high-level IT consultancy and custom software development services may not be positioned to capture this. If you are conflating \"home lessons for students\" with \"corporate staff training,\" you are grouping two completely different business models under one umbrella. They require different marketing channels, price points, and expertise.\n\n### 3. Service Scope Drift (Off-Category)\nYour research attempts to group \"Software Development\" and \"Home Lessons\" into the same market narrative. \n*   **The Flaw:** This is a critical error. \n    *   **Software Development/Consultancy:** This is a B2B service. Your sales cycle is long, trust-based, and depends on the digital maturity of local businesses.\n    *   **Home Lessons:** This is a B2C (or B2B2C) service, likely sensitive to local household disposable income.\n*   **The Concern:** By treating these as a single market, your advice to \"frame services as cost-saving tools\" is **off-category** for the home lessons/training side of the business. You cannot \"cost-save\" a parent’s decision to hire a home tutor; that is a luxury/educational spend. Applying a B2B business efficiency narrative to a B2C retail/education service makes the advice ineffective for half the business.\n\n### 4. The \"Cost-Saving\" Fallacy (Potential Misapplication)\nYou suggest framing software as a \"cost-saving tool.\"\n*   **The Flaw:** In a market like Akure, many businesses are not yet at the stage of \"digital transformation\" where software *saves* them money—they are at the stage where they don't see the *value* of software at all. Framing software as \"cost-saving\" (efficiency) often fails because the client views it as an \"added cost.\" A more effective approach in a cautious market is often \"Revenue Generation\" or \"Business Growth.\"\n\n### Summary Review:\n**The research does not hold up.** \n\n**Why?** It relies on broad, national economic sentiment rather than specific local behavior, and it dangerously conflates two entirely different business models (B2B IT Solutions and B2C Education/Lessons). \n\n**Recommendation:** \n1.  **Segment your findings:** Separate the strategy for \"Software/Consultancy\" (B2B) from \"Training/Home Lessons\" (B2C).\n2.  **Validate the \"Demand\":** Substantiate the \"high demand for training\" claim with actual data (e.g., number of inquiries, local education trends in Akure, or industry gaps). \n3.  **Refine the Narrative:** Stop using the catch-all \"economic pressure\" excuse. Instead, identify specific pain points for Akure businesses that your software can solve—not just \"saving costs,\" but perhaps \"improving reach\" or \"automating inventory.\""
+          ]
+        },
+        {
+          "agent": "Orchestrator",
+          "role": "user",
+          "content": [
+            "Research current conditions for this business and produce today's digest."
+          ]
+        },
+        {
+          "agent": "Scout",
+          "role": "user",
+          "content": [
+            "Research this business's market following the three-part task in your instructions: feeds, competitors, and opportunities. Opportunities matter most — spend real search effort on what customers actually want and struggle with, not just on finding competitors."
+          ]
+        }
+      ],
+      "completedAt": 1789294786156
+    },
+    {
+      "taskId": "6ffd9c72-31a0-4abd-8d30-b5ff0f2a02d3",
+      "userId": "79c6cb41-86b7-4464-82de-fdcae3da82ce",
+      "status": "completed",
+      "createdAt": 1789299702489,
+      "id": "5a302585-194c-426a-ac9b-9daee3fe4a5f",
+      "digest": {
+        "status": "cautious",
+        "headline": "Focus your sales on immediate, cost-saving tech solutions for local businesses rather than broad consulting.",
+        "whats_happening": [
+          "Businesses in Akure are currently very cautious with spending, prioritizing only services that provide immediate cash-flow benefits or cost savings.",
+          "There is steady interest in computer training, as individuals are seeking skills to increase their personal income potential.",
+          "As a local provider in Oda Town, you have a distinct advantage in building trust that distant firms lack.",
+          "Potential clients are price-sensitive and will only engage if they see how your work helps them earn or save money immediately."
+        ],
+        "what_to_do": "Reach out to three local business owners and ask: \"What manual task takes your team too long each week?\" Use their answer to propose a specific, low-cost automation or website feature that solves that one immediate problem.",
+        "confidence": 0.85
+      },
+      "transcript": [
+        {
+          "agent": "Researcher",
+          "role": "user",
+          "content": [
+            "current business environment for IT consultancy, software development, and computer training services in Akure, Ondo State, Nigeria. Look for local economic trends affecting tech services, small business digitalization, or educational demand in Akure."
+          ]
+        },
+        {
+          "agent": "Researcher",
+          "role": "assistant",
+          "content": [
+            "Based on the current economic environment in Akure and the nature of your services, here are some observations regarding your customers' ability and willingness to spend:\n\n*   **Heightened Demand for Digitalization (High Necessity):** Local businesses in Akure are facing significant inflationary pressures, which often creates a paradox: while they have less \"disposable\" cash, they have a *higher* need for efficient software and websites to reduce operational costs and reach more customers. If you frame your software and website development as a tool for **cost-saving and revenue generation** (rather than an optional upgrade), you are more likely to find businesses willing to spend.\n*   **Computer Training/Home Lessons as an Investment:** Families and individuals are increasingly prioritizing skill acquisition as a way to hedge against unemployment or increase income. Demand for computer training and home lessons in Akure is likely to remain resilient, as it is viewed as an investment in a person’s future employability. However, clients are likely more price-sensitive and may prefer modular, bite-sized, or skill-specific training programs rather than long, expensive general courses.\n*   **The \"Consultancy\" Challenge:** IT consultancy is often seen as a luxury expense by small businesses during lean economic times. To get them to spend, your consultancy needs to provide immediate, tangible value (e.g., \"fixing\" a specific tech issue that is currently costing them money or time) rather than high-level strategic advice.\n*   **Economic Sensitivity in Akure:** Akure’s local economy is heavily influenced by the purchasing power of civil servants and the agricultural/trading sectors. When food prices and transportation costs rise in Ondo State, the \"extra\" cash that typically goes toward non-essential tech upgrades dries up first. Your target customers right now are likely those businesses that are stable enough to need growth but are struggling with manual processes that you can automate.\n*   **Market Competition:** There is a growing presence of tech entities in Akure (over a dozen established firms). This means you are competing for a limited pool of capital. Differentiation is key: focus on your local presence in Oda Town as a \"trusted neighbor\" who offers personalized support, which larger, distant, or anonymous online competitors cannot match.\n\n**Summary for your strategy:** Focus your marketing on **direct ROI**. When speaking to clients, don't just sell \"a website\"; sell \"a tool that brings in X more customers.\" When selling training, highlight the exact, immediate skill that will lead to a job or a freelance project. Your customers likely have money, but they are currently guarding it very carefully and will only release it if they see a clear, near-term return."
+          ]
+        },
+        {
+          "agent": "Critic",
+          "role": "user",
+          "content": [
+            "The researcher provided a solid analysis of the IT consultancy, software development, and computer training market in Akure, focusing on ROI-based messaging and the current economic constraints. The advice is relevant to Manomite Limited's specific offerings (software, websites, IT consultancy, training). Are there any off-category or generic observations here that should be filtered?"
+          ]
+        },
+        {
+          "agent": "Critic",
+          "role": "assistant",
+          "content": [
+            "To provide a truly skeptical audit, I need to see the actual text of the researcher’s analysis. However, based on the description of the findings you provided, I can already identify several common \"pitfalls\" inherent in this type of market research. \n\nWhen you review the full report, please cross-reference it against these specific criteria for skepticism:\n\n### 1. The \"National Trend\" Trap (Misapplied Scale)\nResearchers often pull national GDP growth or national tech-adoption statistics to sound authoritative. \n*   **The Skeptical Test:** If the report cites national figures (e.g., \"Nigeria’s tech sector is growing at 15%\"), **ignore it.** This is irrelevant to Manomite Limited in Akure. Akure’s market is driven by local SME needs and institutional spending, not national venture capital flows. \n*   **The Flaw:** If they suggest you adjust your strategy based on \"national digital transformation trends,\" they are offering fluff. Manomite needs to know how many local businesses in Akure are *actually* investing in custom software, not how many are doing so in Lagos or Abuja.\n\n### 2. The \"Off-Category\" Drift (The \"Jack of All Trades\" Trap)\nManomite has a wide service umbrella: B2B software, website design, IT consultancy, AND home lessons. This is a red flag for market research.\n*   **The Skeptical Test:** Does the report treat these four services as one market? They are not. \n    *   **B2B Software/Consultancy** is driven by ROI and operational efficiency.\n    *   **Home Lessons** is a B2C luxury service driven by parental anxiety and academic performance.\n*   **The Flaw:** If the report applies \"economic constraints\" as a blanket excuse for poor performance across all four, it is being lazy. **Home lessons** often thrive in recessions (as parents double down on tutoring to ensure future success), while **B2B software** tends to stall. If the research fails to distinguish these buying triggers, it is useless.\n\n### 3. \"ROI-Based Messaging\" – A Guess Dressed as a Fact?\nThis is a standard consultancy cliché. Every IT firm is told to \"focus on ROI.\"\n*   **The Skeptical Test:** Ask for the proof. Did the researcher actually survey Akure-based SMEs, or are they repeating a generic sales mantra?\n*   **The Flaw:** If the research doesn't name specific local pain points (e.g., \"Akure small businesses struggle with inventory tracking because of [X]\"), then the \"ROI-based messaging\" advice is a generic guess. It’s an educated guess, but it’s still an assumption.\n\n### 4. Stale Data\n*   **The Skeptical Test:** Check the dates on all economic citations.\n*   **The Flaw:** Post-2023, the economic landscape in Nigeria has shifted drastically due to fuel subsidies and currency inflation. If the report uses data from 2021 or 2022, it is fundamentally stale. Buying habits have changed significantly; pre-inflation consumer behavior data is now misleading.\n\n### 5. Lack of \"Killer\" Detail\n*   **The Skeptical Test:** Does the report focus on *your* business, or the *industry*?\n*   **The Flaw:** If the research spends 80% of its time telling you what IT consultancy is (which you already know), it is providing a textbook, not a market analysis. It should be telling you who in Akure is currently buying, how they prefer to be contacted (e.g., WhatsApp vs. formal proposals), and what your competitors are failing to do.\n\n***\n\n**My request:** Please paste the specific bullet points or summary of the researcher's findings. I will then strip away the fluff, identify the irrelevant \"national\" data, and tell you which parts are safe to act upon."
+          ]
+        },
+        {
+          "agent": "Orchestrator",
+          "role": "user",
+          "content": [
+            "Research current conditions for this business and produce today's digest."
+          ]
+        },
+        {
+          "agent": "Scout",
+          "role": "user",
+          "content": [
+            "Research this business's market following the three-part task in your instructions: feeds, competitors, and opportunities. Opportunities matter most — spend real search effort on what customers actually want and struggle with, not just on finding competitors."
+          ]
+        }
+      ],
+      "completedAt": 1789299727698,
+      "feedback": "helpful"
+    },
+    {
+      "taskId": "6ffd9c72-31a0-4abd-8d30-b5ff0f2a02d3",
+      "userId": "79c6cb41-86b7-4464-82de-fdcae3da82ce",
+      "status": "completed",
+      "createdAt": 1789299900323,
+      "id": "8e5f816e-404d-49d9-bcc5-954a75dc4157",
+      "digest": {
+        "status": "buy",
+        "headline": "There is steady local demand for your digital services, provided you demonstrate a clear return on investment.",
+        "whats_happening": [
+          "Akure businesses are increasingly looking for ways to improve efficiency, creating steady interest in web and software development.",
+          "There is a reliable demand for IT training from individuals looking to boost their career prospects.",
+          "Local customers remain price-sensitive and are prioritizing services that offer immediate, tangible benefits.",
+          "Combining your training services with your software projects is an effective way to deepen client relationships."
+        ],
+        "what_to_do": "Focus your sales pitch today on ROI rather than technical features; show a local business how your software saves them time.",
+        "confidence": 0.9
+      },
+      "transcript": [
+        {
+          "agent": "Researcher",
+          "role": "user",
+          "content": [
+            "current market conditions for IT consultancy, software development, web development, and computer training services in Akure, Ondo State, Nigeria. Look for recent trends in business digital transformation, education demand, or local economic factors affecting IT service providers in Akure."
+          ]
+        },
+        {
+          "agent": "Researcher",
+          "role": "assistant",
+          "content": [
+            "Based on current market conditions in Akure, here is the outlook for your business (Manomite Limited):\n\n### **Market Observations**\n\n*   **Growing Appetite for Digital Presence:** There is a visible, ongoing shift among small and medium-sized enterprises (SMEs) in Akure toward digital transformation. Businesses are increasingly looking to move beyond traditional operations to capture market share, which drives demand for professional website development and business software solutions.\n*   **High Demand for Skill Acquisition:** Computer training remains a high-potential area in Akure. Young professionals and students are actively seeking technical skills to improve their employability in an increasingly digital economy. \"Home lessons\" for specialized computer training are particularly valued as a premium, personalized service that differentiates you from larger, generic training centers.\n*   **Local Competitive Landscape:** There are several IT firms operating within Akure. However, many are focused on either high-end corporate projects or entry-level training. Your advantage lies in your hybrid model (consultancy + training), which allows you to build deeper, recurring relationships with clients rather than just one-off project deliveries.\n\n### **Economic Factors Affecting Your Customers**\n\n*   **Cost-Consciousness:** While demand for digital tools is growing, your local clients are highly sensitive to price due to current inflationary pressures on operational costs in Nigeria. They will be looking for *tangible ROI*. When pitching software or consultancy, focus on how your service will specifically save them money or directly increase their revenue, rather than just the \"technical\" features.\n*   **Focus on Essential Services:** During periods of economic tightening, businesses tend to cut \"nice-to-have\" digital projects and prioritize \"essential\" ones. Position your services as business-critical—for example, a website that automates sales or a software tool that reduces administrative labor—rather than just \"branding\" exercises.\n*   **Willingness to Pay for Training:** Education remains a priority in the region. Households and individuals are generally willing to spend on training if they perceive a clear pathway to better income or career advancement. Positioning your computer training as a professional \"career-launching\" service is more effective than positioning it as a general \"hobby\" or \"introduction\" course.\n\n### **Suggested Approach for Manomite Limited**\n*   **Bundle Services:** Combine your offerings. For example, offer a \"Digital Business Starter Pack\" which includes website development plus a training session for the business owner on how to manage it. This increases your transaction value and creates a \"sticky\" client relationship.\n*   **Targeted Outreach:** Instead of broad advertising, reach out to businesses in Akure that are currently expanding (e.g., growing retail, logistics, or private educational centers). These businesses are the most likely to have the budget to afford your IT and consultancy services right now.\n*   **Prove the Value:** Because customers are cautious, provide local case studies or testimonials of how you have helped a business *in the Akure area* succeed. Demonstrating local impact builds trust faster than technical qualifications."
+          ]
+        },
+        {
+          "agent": "Critic",
+          "role": "user",
+          "content": [
+            "The researcher provided a solid analysis of the IT market in Akure, focusing on digital transformation, computer training demand, and customer cost-consciousness. The findings are relevant to Manomite Limited's services (software, web, IT consulting, training). Please verify if these points are appropriate and directly applicable for a daily business digest for this owner."
+          ]
+        },
+        {
+          "agent": "Critic",
+          "role": "assistant",
+          "content": [
+            "To provide a rigorous review, I need you to **share the specific text of the research findings.** \n\nHowever, based on your description of the research—\"digital transformation,\" \"computer training demand,\" and \"customer cost-consciousness\"—I have prepared a framework of what I will be looking for to ensure these findings aren't just \"generic noise\" masquerading as business intelligence.\n\nOnce you provide the text, I will subject it to the following tests:\n\n### 1. The \"Relevance Drift\" Test (Categorization)\nI will be checking if the researcher has conflated high-level industry trends with the local reality of Akure.\n*   **The Trap:** Many researchers cite global \"digital transformation\" stats (e.g., Fortune 500 cloud adoption) that have zero bearing on an SME in Akure looking for local web development or home IT lessons. \n*   **The Check:** If the research cites national or global stats without a specific \"Akure-based bridge\" (e.g., local infrastructure constraints, SME adoption rates in Ondo State), it is off-category fluff and not actionable intelligence.\n\n### 2. The \"Stale/Generic\" Test (Observation vs. Assertion)\nI will look for \"fact-dressing.\"\n*   **The Trap:** Phrases like \"businesses are increasingly looking for digital solutions\" are often \"guessed facts.\" Without a specific indicator—such as a shift in local trade association requests or a change in the local supply chain—this is merely an observation of a decade-old trend.\n*   **The Check:** If the research doesn't name a local driver (e.g., \"new government mandates in Ondo state\" or \"growth in the Akure fintech hub\"), it is stale, generic filler.\n\n### 3. The \"Service Mismatch\" Test (Operational Focus)\nManomite Limited has a split identity: **B2B (Software/IT/Consultancy)** and **B2C (Home Lessons/Training).**\n*   **The Trap:** Researchers often blend these into one \"IT Market\" analysis. This is a flaw. The buyer behavior for a corporate software contract in Akure is entirely different from the buyer behavior of a parent hiring an IT tutor for a child.\n*   **The Check:** I will determine if the researcher has provided a unified strategy that effectively ignores the different sales cycles of your business lines. \n\n### 4. The \"Cost-Consciousness\" Verification\nYou mentioned the researcher cited \"customer cost-consciousness.\"\n*   **The Trap:** Is this a research-backed insight, or is it a pessimistic bias? \n*   **The Check:** I need to know if the researcher distinguishes between *low-end price sensitivity* (people looking for free YouTube tutorials) and *investment-based sensitivity* (businesses looking for ROI-positive software). If they aren't making that distinction, the advice is dangerous and might lead you to underprice your consultancy.\n\n***\n\n**Please paste the research findings below.** I am ready to identify the weak spots, flag the irrelevant data, and tell you if this is actually safe to use as a basis for your daily business digest."
+          ]
+        },
+        {
+          "agent": "Orchestrator",
+          "role": "user",
+          "content": [
+            "Research current conditions for this business and produce today's digest."
+          ]
+        },
+        {
+          "agent": "Scout",
+          "role": "user",
+          "content": [
+            "Research this business's market following the three-part task in your instructions: feeds, competitors, and opportunities. Opportunities matter most — spend real search effort on what customers actually want and struggle with, not just on finding competitors."
+          ]
+        }
+      ],
+      "completedAt": 1789299920822,
+      "feedback": "helpful"
+    }
+  ],
+  "taskData": [],
+  "feedItems": [
+    {
+      "title": "IT Training Center In Akure recommendation requests",
+      "url": "https://www.nairaland.com/7200120/it-training-center-akure-voks",
+      "source": "Nairaland Forum",
+      "snippet": "Discussion threads on Nairaland frequently show locals seeking recommendations for high-quality computer and ICT training centers in Akure.",
+      "relevance": "Highlights the local demand for structured and reputable IT/programming training in Akure.",
+      "id": "ec1ea1c7-7cfe-49ec-b228-1ccef4a76511",
+      "taskId": "f9600e70-4093-45f1-abf3-a91afc8d93e3",
+      "discoveredAt": 1789294201049
+    },
+    {
+      "title": "Web Development Training in Akure",
+      "url": "https://voksinstitute.com/blogpost/web-development-training-in-akure",
+      "source": "VOKS Institute Blog",
+      "snippet": "Akure is fast becoming a tech innovation hub, with a growing number of startups and IT-focused events.",
+      "relevance": "Highlights that Akure is growing as a tech hub, creating a direct demand for the services Manomite Limited offers.",
+      "id": "4ba4fcdd-6da6-490f-9ba2-f24067050acd",
+      "taskId": "f9600e70-4093-45f1-abf3-a91afc8d93e3",
+      "discoveredAt": 1789294819415
+    },
+    {
+      "title": "VOKS Institute Training Feedback",
+      "url": "https://www.top-rated.online/cities/Akure/place/p/15161842/VOKS+Institute+%7C+Best+Software+Training+Institute+%7C+ICT+Training+%26+Tech+Skill+Acquisition+Center",
+      "source": "Top-Rated Education Reviews",
+      "snippet": "Students at local tech institutes appreciate hands-on training in high-demand skills like Python and Data Science.",
+      "relevance": "Highlights the demand for practical, skill-based tech training in Akure that leads to career-ready outcomes.",
+      "id": "1ca94e8a-c346-48d1-93d2-954d1dac0068",
+      "taskId": "6ffd9c72-31a0-4abd-8d30-b5ff0f2a02d3",
+      "discoveredAt": 1789299743055
+    }
+  ],
+  "competitors": [
+    {
+      "name": "VOKS Technologies Limited",
+      "whatTheyDo": "Provides software development, business IT solutions, and structured ICT training in Akure.",
+      "advantage": "They have a well-established brand presence in Akure as a one-stop-shop for both IT solutions and structured training.",
+      "howToCompete": "Focus on building a niche reputation for 'personalized' home-service IT support and training that busy professionals or families cannot get from a large institute.",
+      "id": "e239b7a8-a0b9-4367-b3fc-769106d27617",
+      "taskId": "f9600e70-4093-45f1-abf3-a91afc8d93e3"
+    },
+    {
+      "name": "VOKS Technologies Limited",
+      "whatTheyDo": "Offers software development, staff management systems, data analysis, and an IT training institute.",
+      "advantage": "Well-established local presence with 9+ years of operation and a clear focus on business-specific IT solutions.",
+      "howToCompete": "Differentiate by highlighting your 'home lesson' flexibility and personalized mentorship, which formal training centers often lack.",
+      "id": "be7940ad-70a3-4fd7-8958-3c38c4127414",
+      "taskId": "6ffd9c72-31a0-4abd-8d30-b5ff0f2a02d3"
+    },
+    {
+      "name": "Wireless Computer Services",
+      "whatTheyDo": "Focuses on web development and website design services.",
+      "advantage": "Positions itself specifically as a web design agency using modern, visually appealing technologies.",
+      "howToCompete": "Emphasize your end-to-end service, including ongoing IT consultancy and support, which pure web design firms may not prioritize.",
+      "id": "7ddf2601-f3c6-456e-909a-75305674e0a6",
+      "taskId": "6ffd9c72-31a0-4abd-8d30-b5ff0f2a02d3"
+    }
+  ],
+  "opportunities": [
+    {
+      "theme": "Need for affordable, entry-level business software solutions",
+      "whatPeopleAreSaying": "While large companies offer enterprise software, smaller local businesses often feel these solutions are either too expensive or too complex for their basic needs.",
+      "suggestion": "Create a clear 'Small Business Digital Starter Pack' (basic website + data management setup) priced specifically for local Oda Town and Akure SMEs to bridge the gap between expensive enterprise solutions and DIY.",
+      "mentionCount": 1,
+      "sentiment": "neutral",
+      "id": "a3ce8044-bdaf-43d1-8564-25f0ad66a0b5",
+      "taskId": "f9600e70-4093-45f1-abf3-a91afc8d93e3"
+    },
+    {
+      "theme": "Fear of hidden costs and reliability in IT support",
+      "whatPeopleAreSaying": "Potential customers frequently ask on platforms like Nairaland for recommendations of 'good' and 'reliable' centers, implying a struggle to trust new or unknown providers with critical business data or training.",
+      "suggestion": "Create a 'Business Tech Support Starter Package' that includes 3 months of remote/on-site troubleshooting at a flat, predictable rate to remove the 'guessing game' from IT costs.",
+      "mentionCount": 1,
+      "sentiment": "negative",
+      "id": "5bf99ad0-b46d-4271-a4e4-12d487ef044d",
+      "taskId": "6ffd9c72-31a0-4abd-8d30-b5ff0f2a02d3"
+    }
+  ]
+}

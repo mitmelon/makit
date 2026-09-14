@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  body { @apply bg-surface-alt text-ink font-sans; }
+  :focus-visible { outline: 2px solid theme('colors.accent.DEFAULT'); outline-offset: 2px; }
+  input, select, textarea { @apply bg-surface; }
+}
+
+@layer components {
+  /* Cards */
+  .panel { @apply bg-surface border border-line rounded-card shadow-card; }
+  .panel-raised { @apply bg-surface border border-line rounded-card shadow-raised; }
+  .bento { @apply bg-surface border border-line rounded-xl2 shadow-card overflow-hidden relative; }
+
+  /* Stat / metric display */
+  .stat-label { @apply text-[13px] font-medium text-ink-soft tracking-wide; }
+  .stat-value { @apply text-stat text-ink tabular-nums; }
+
+  /* Badges */
+  .badge { @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[12px] font-semibold; }
+  .badge-good { @apply badge bg-signal-good/10 text-signal-good; }
+  .badge-caution { @apply badge bg-signal-caution/10 text-signal-caution; }
+  .badge-slow { @apply badge bg-signal-slow/10 text-signal-slow; }
+  .badge-buy { @apply badge bg-signal-buy/10 text-signal-buy; }
+  .badge-rest { @apply badge bg-signal-rest/10 text-signal-rest; }
+  .badge-danger { @apply badge bg-signal-danger/10 text-signal-danger; }
+  .badge-neutral { @apply badge bg-surface-sunken text-ink-soft; }
+
+  /* Buttons — Stripe pill shape, subtle lift on hover */
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-[14px] font-semibold transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed; }
+  .btn-primary { @apply btn bg-ink text-white shadow-card hover:shadow-raised hover:-translate-y-px; }
+  .btn-accent { @apply btn bg-accent text-white shadow-glow hover:bg-accent-hover hover:-translate-y-px; }
+  .btn-secondary { @apply btn bg-surface-sunken text-ink border border-line hover:border-ink-faint; }
+  .btn-danger { @apply btn bg-signal-slow/10 text-signal-slow hover:bg-signal-slow/20; }
+  .btn-sm { @apply px-3.5 py-1.5 text-[13px]; }
+
+  /* Forms */
+  .field-label { @apply block text-[13px] font-medium text-ink mb-1.5; }
+  .field-input {
+    @apply w-full rounded-[10px] border border-line bg-surface px-3.5 py-3 text-[14px] text-ink placeholder:text-ink-faint shadow-card outline-none transition-all duration-150;
+    @apply hover:border-ink-faint focus:border-accent focus:ring-4 focus:ring-accent/15;
+  }
+  .field-hint { @apply text-[12px] text-ink-soft mt-1.5; }
+
+  .dot { @apply inline-block w-1.5 h-1.5 rounded-full; }
+
+  /* Navigation */
+  .nav-link { @apply text-[14px] font-medium text-ink-soft hover:text-ink transition-colors; }
+  .nav-link-active { @apply nav-link text-ink; }
+  .sidebar-link { @apply flex items-center gap-3 px-3 py-2 rounded-[10px] text-[14px] font-medium text-ink-soft hover:bg-surface-sunken hover:text-ink transition-colors; }
+  .sidebar-link-active { @apply sidebar-link bg-accent-soft text-accent hover:bg-accent-soft hover:text-accent; }
+
+  /* Gradient text, for headlines that want the marketing-site treatment */
+  .text-gradient { @apply bg-clip-text text-transparent bg-grad-accent; }
+}

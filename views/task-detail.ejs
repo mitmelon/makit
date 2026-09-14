@@ -1,0 +1,137 @@
+<%- include('partials/header', { title: 'Intelligence — Makit' }) %>
+    <main class="flex-1 w-full px-4 sm:px-6 lg:px-10 py-6 sm:py-8 space-y-8">
+        <div>
+            <a href="../dashboard" class="inline-flex items-center text-[13px] text-ink-soft hover:text-ink">&larr; Back
+                to tasks</a>
+            <div class="mt-2 flex flex-col gap-3">
+                <div class="min-w-0">
+                    <h1 class="text-[20px] sm:text-[22px] font-semibold text-ink break-words" id="task-name">&nbsp;</h1>
+                    <p class="text-[13px] sm:text-[14px] text-ink-soft mt-1 break-words" id="task-sub">&nbsp;</p>
+                </div>
+                <div class="flex flex-wrap items-center gap-2">
+                    <a id="edit-link" href="#" class="btn-secondary">Edit</a>
+                    <button id="delete-btn" class="btn-danger">Delete</button>
+                    <button id="pause-btn" class="btn-secondary">Pause</button>
+                    <button id="run-btn" class="btn-primary">Run now</button>
+                </div>
+            </div>
+        </div>
+
+        <section class="panel p-5 sm:p-6 overflow-hidden">
+            <div class="flex items-center justify-between mb-1">
+                <h2 class="text-[15px] font-semibold text-ink">Recent runs</h2>
+                <p class="text-[13px] text-ink-soft">Last 20</p>
+            </div>
+            <div id="trend-chart" class="mt-4 h-16 w-full overflow-hidden"></div>
+        </section>
+
+        <div id="market-strength-section" class="hidden"></div>
+
+        <section id="latest-digest-section" class="hidden">
+            <h2 class="text-[15px] font-semibold text-ink mb-3">Latest read</h2>
+            <div class="panel p-6" id="latest-digest"></div>
+        </section>
+
+        <section id="conversations-section" class="hidden">
+            <h2 class="text-[15px] font-semibold text-ink mb-1">Market conversations</h2>
+            <p class="text-[13px] text-ink-soft mb-3">Each dot is a real pattern found in the market — how far right,
+                the more positive; higher up, the more people said it. Hover a dot for details.</p>
+            <div class="panel p-5 sm:p-6 relative overflow-hidden">
+                <div id="conversations-chart" class="relative w-full" style="height: 240px;"></div>
+            </div>
+        </section>
+
+        <section id="opportunities-section" class="hidden">
+            <h2 class="text-[15px] font-semibold text-ink mb-1">Opportunities</h2>
+            <p class="text-[13px] text-ink-soft mb-3">What customers in this market are actually asking for, and what to
+                do about it.</p>
+            <div id="opportunities-list" class="space-y-3"></div>
+        </section>
+
+        <section id="competitors-section" class="hidden">
+            <h2 class="text-[15px] font-semibold text-ink mb-3">Competitors</h2>
+            <div id="competitors-list" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+        </section>
+
+        <section id="task-feeds-section" class="hidden">
+            <h2 class="text-[15px] font-semibold text-ink mb-3">Latest feeds</h2>
+            <div class="panel overflow-hidden">
+                <div id="task-feeds-table"></div>
+            </div>
+        </section>
+
+        <section class="panel p-6">
+            <div class="flex flex-wrap items-center gap-2 mb-4">
+                <h2 class="text-[15px] font-semibold text-ink">Business data</h2>
+                <div class="ml-auto flex flex-wrap items-center gap-2">
+                    <button type="button" data-data-mode="stream" class="data-mode-toggle btn-primary btn-sm">Stream
+                        data</button>
+                    <button type="button" data-data-mode="upload" class="data-mode-toggle btn-secondary btn-sm">Upload
+                        file</button>
+                </div>
+            </div>
+
+            <div id="stream-data-panel" class="data-panel">
+                <p class="text-[13px] text-ink-soft mb-3">POST any JSON to this URL — sales numbers, foot traffic, notes
+                    — and the agent will factor in the latest entries on its next run.</p>
+                <div class="flex items-center gap-2">
+                    <code
+                        class="flex-1 bg-surface-sunken rounded-[10px] px-3.5 py-2.5 text-[13px] text-ink font-mono truncate"
+                        id="webhook-url">&nbsp;</code>
+                    <button id="copy-webhook" class="btn-secondary shrink-0">Copy</button>
+                    <button id="rotate-webhook" class="btn-secondary shrink-0">Rotate</button>
+                </div>
+                <div id="custom-data-list" class="mt-4 space-y-2"></div>
+
+                <div class="mt-6 pt-5 border-t border-line">
+                    <button id="toggle-dev-docs" class="text-[13px] text-accent font-medium flex items-center gap-1.5">
+                        <span id="dev-docs-arrow">&rarr;</span> Developer docs — code samples for streaming data
+                    </button>
+                    <div id="dev-docs-panel" class="hidden mt-4">
+                        <p class="text-[13px] text-ink-soft mb-3">Send a JSON object with whatever fields matter for
+                            this business — sales figures, foot traffic, a note. There's no fixed schema; the agent
+                            reads whatever you send. Example below uses sales and a note.</p>
+                        <div class="flex gap-1 mb-2">
+                            <button type="button" data-lang="curl"
+                                class="dev-docs-tab btn-secondary btn-sm">curl</button>
+                            <button type="button" data-lang="javascript"
+                                class="dev-docs-tab btn-secondary btn-sm">JavaScript</button>
+                            <button type="button" data-lang="python"
+                                class="dev-docs-tab btn-secondary btn-sm">Python</button>
+                        </div>
+                        <pre
+                            class="bg-ink text-[#e5e5ea] rounded-[10px] p-4 text-[12.5px] font-mono overflow-x-auto leading-relaxed"><code id="dev-docs-code"></code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div id="upload-data-panel" class="data-panel hidden">
+                <p class="text-[13px] text-ink-soft mb-3">Upload a JSON, CSV, or plain-text business data file. Files
+                    are stored securely for this task and included in the agent's next run as custom context.</p>
+                <form id="upload-data-form" class="space-y-3">
+                    <label class="block">
+                        <span class="sr-only">Choose business data file</span>
+                        <input id="business-data-file" type="file" accept=".json,.csv,.txt,.log,.md"
+                            class="block w-full rounded-[10px] border border-line bg-surface-sunken px-3 py-2.5 text-[13px] text-ink file:mr-3 file:rounded file:border-0 file:bg-accent file:px-3 file:py-1.5 file:text-white file:font-medium" />
+                    </label>
+                    <div class="flex items-center gap-3">
+                        <button type="submit" class="btn-primary">Upload business data</button>
+                        <span id="upload-status" class="text-[12px] text-ink-soft">No file selected</span>
+                    </div>
+                    <div class="h-2 w-full overflow-hidden rounded-full bg-surface-sunken">
+                        <div id="upload-progress-bar"
+                            class="h-full w-0 rounded-full bg-gradient-to-r from-accent to-sky-500 transition-all duration-200">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-[15px] font-semibold text-ink mb-3">Agent reasoning log</h2>
+            <div id="runs-list" class="space-y-3"></div>
+        </section>
+    </main>
+
+    <script src="/js/task-detail-page.js"></script>
+    <%- include('partials/footer') %>

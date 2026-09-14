@@ -1,0 +1,30 @@
+<%- include('partials/header', { title: 'Dashboard — Makit' }) %>
+    <main class="flex-1 px-6 lg:px-10 py-8">
+        <div id="stat-cards" class="hidden grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8"></div>
+
+        <div id="task-list" class="space-y-3"></div>
+
+        <div id="empty-state" class="hidden panel p-16 text-center max-w-lg mx-auto mt-8">
+            <div class="w-12 h-12 rounded-[12px] bg-grad-accent mx-auto mb-5 flex items-center justify-center">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <rect x="3" y="3" width="14" height="14" rx="3" stroke="white" stroke-width="1.6" />
+                    <path d="M6.5 10L9 12.5L13.5 7.5" stroke="white" stroke-width="1.6" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+            <p class="text-[16px] font-semibold text-ink mb-1" id="empty-title">No Intelligence yet</p>
+            <p class="text-[14px] text-ink-soft mb-6" id="empty-body">Create one to start getting a daily read on your
+                market.</p>
+            <a href="./tasks/new" class="btn-accent" id="empty-cta">Create your first Intelligence</a>
+        </div>
+
+        <div id="feeds-section" class="hidden mt-10">
+            <h2 class="text-[15px] font-semibold text-ink mb-4" id="feeds-heading">Latest feeds</h2>
+            <div class="panel overflow-hidden">
+                <div id="feeds-table"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/dashboard-page.js"></script>
+    <%- include('partials/footer') %>

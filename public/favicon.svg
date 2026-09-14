@@ -1,0 +1,34 @@
+<svg width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mark-bg" x1="0" y1="0" x2="240" y2="240" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#635BFF"/>
+      <stop offset="52%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+    <linearGradient id="mark-glow" x1="0" y1="0" x2="240" y2="240" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- soft ambient glow behind the badge -->
+  <circle cx="120" cy="120" r="118" fill="url(#mark-glow)"/>
+
+  <!-- badge -->
+  <rect x="8" y="8" width="224" height="224" rx="56" fill="url(#mark-bg)"/>
+  <rect x="8.5" y="8.5" width="223" height="223" rx="55.5" stroke="white" stroke-opacity="0.14"/>
+
+  <!-- market-pulse / "M" line: a trend line that reads as both a
+       heartbeat pulse and the letter M, with plotted data nodes at
+       each turning point -->
+  <path d="M56 152 L84 152 L100 96 L120 176 L140 116 L156 152 L184 152"
+        stroke="white" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <circle cx="100" cy="96" r="8.5" fill="white"/>
+  <circle cx="120" cy="176" r="8.5" fill="white"/>
+  <circle cx="140" cy="116" r="8.5" fill="white"/>
+
+  <!-- accent dot: the "signal caught" marker -->
+  <circle cx="184" cy="152" r="10" fill="white"/>
+  <circle cx="184" cy="152" r="16" stroke="white" stroke-opacity="0.5" stroke-width="2.5"/>
+</svg>

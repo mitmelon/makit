@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#635BFF" />
+    <title>Log in — Makit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="/css/app.css" />
+</head>
+
+<body class="min-h-screen flex items-center justify-center px-6">
+    <div class="w-full max-w-[380px]">
+        <div class="flex items-center gap-2.5 justify-center mb-8">
+            <svg width="32" height="32" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="30" height="30" rx="9" fill="url(#auth-logo-grad)" />
+                <path d="M8 20V10.5L14 15.5L20 10.5V20" stroke="white" stroke-width="2.1" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <defs>
+                    <linearGradient id="auth-logo-grad" x1="0" y1="0" x2="30" y2="30" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#635BFF" />
+                        <stop offset="0.5" stop-color="#8B5CF6" />
+                        <stop offset="1" stop-color="#38BDF8" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span class="text-[19px] font-semibold text-ink">Makit</span>
+        </div>
+
+        <div class="panel p-8">
+            <h1 class="text-[20px] font-semibold text-ink mb-1">Welcome back</h1>
+            <p class="text-[14px] text-ink-soft mb-6">Log in to see today's read on your market.</p>
+
+            <form id="login-form" class="space-y-4">
+                <div>
+                    <label class="field-label" for="email">Email</label>
+                    <input class="field-input" type="email" id="email" name="email" required autocomplete="email" />
+                </div>
+                <div>
+                    <label class="field-label" for="password">Password</label>
+                    <input class="field-input" type="password" id="password" name="password" required
+                        autocomplete="current-password" />
+                </div>
+                <p id="error" class="text-[13px] text-[#c62b21] hidden"></p>
+                <button type="submit" class="btn-primary w-full" id="submit-btn">Log in</button>
+            </form>
+        </div>
+
+        <p class="text-center text-[13px] text-ink-soft mt-6">
+            New here? <a href="./register" class="text-accent font-medium">Create an account</a>
+        </p>
+    </div>
+
+    <script src="/js/shared.js"></script>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('submit-btn');
+            const errorEl = document.getElementById('error');
+            errorEl.classList.add('hidden');
+            btn.disabled = true;
+            btn.textContent = 'Logging in…';
+            try {
+                await Makit.api('/api/auth/login', {
+                    method: 'POST',
+                    body: {
+                        email: document.getElementById('email').value,
+                        password: document.getElementById('password').value,
+                    },
+                });
+                location.href = './dashboard';
+            } catch (err) {
+                errorEl.textContent = err.message;
+                errorEl.classList.remove('hidden');
+                btn.disabled = false;
+                btn.textContent = 'Log in';
+            }
+        });
+    </script>
+</body>
+
+</html>
